@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_learn"
         android:icon="@drawable/learn"
-        android:title="Item 1" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_pave_way"
         android:icon="@drawable/pave_way"
-        android:title="Item 2" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_events"
         android:icon="@drawable/events"
-        android:title="Item 3" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_healthicons_travel"
         android:icon="@drawable/healthicons_travel"
-        android:title="Item 4" />
+        app:showAsAction="ifRoom" />
 </menu>
