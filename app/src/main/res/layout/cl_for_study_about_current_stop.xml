@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:state_pressed="true">
+
+    <TextView
+        android:id="@+id/tv_header_for_study_about_current_stop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:text="TextView"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_header_for_study_about_current_stop"
+        app:layout_constraintStart_toStartOf="@+id/tv_header_for_study_about_current_stop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header_for_study_about_current_stop"
+        app:srcCompat="@drawable/img_royal_observatory" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="4dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/tv_next_place_for_study_about_current_stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_header_for_study_about_current_stop"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TextView
+            android:id="@+id/tv_main_txt_for_study_about_current_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_next_place_for_study_about_current_stop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="@string/txt_next_place"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

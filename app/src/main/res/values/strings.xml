@@ -11,4 +11,24 @@
     <string name="txt_longa_market">Longa Market</string>
     <string name="txt_botswana">Botswana</string>
     <string name="txt_antarctica">Antarctica</string>
+    <string name="txt_study">Study</string>
+    <string name="txt_quiz">Quiz</string>
+    <string name="txt_header_royal_observatory">Royal Observatory</string>
+    <string name="txt_header_greenwich">Greenwich Mean Time</string>
+    <string name="txt_festival_london">Festival of Britain</string>
+    <string name="txt_quiz_question_1">Question 1</string>
+    <string name="txt_quiz_question_2">Question 2</string>
+    <string name="txt_quiz_question_3">Question 3</string>
+    <string name="txt_quiz_question_4">Question 4</string>
+    <string name="txt_quiz_question_5">Question 5</string>
+    <string name="txt_quiz_question_6">Question 6</string>
+    <string name="txt_quiz_question_7">Question 7</string>
+    <string name="txt_quiz_question_8">Question 8</string>
+    <string name="txt_quiz_question_9">Question 9</string>
+    <string name="txt_quiz_question_10">Question 10</string>
+    <string name="txt_quiz_variant_a">a</string>
+    <string name="txt_quiz_variant_b">b</string>
+    <string name="txt_quiz_variant_c">c</string>
+    <string name="txt_quiz_variant_d">d</string>
+    <string name="txt_next_place">Next place</string>
 </resources>

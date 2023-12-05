@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_current_stop"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_current_city"
+        app:layout_constraintEnd_toEndOf="@+id/img_current_city"
+        app:layout_constraintStart_toStartOf="@+id/img_current_city"
+        app:srcCompat="@drawable/stop_number_1" />
+
+    <ImageView
+        android:id="@+id/img_current_city"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_study"
+        app:layout_constraintEnd_toEndOf="@+id/tv_study"
+        app:layout_constraintStart_toStartOf="@+id/tv_study"
+        app:srcCompat="@drawable/stop_london" />
+
+    <TextView
+        android:id="@+id/tv_study"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/anim_click_text"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="@string/txt_study"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_quiz"
+        app:layout_constraintEnd_toEndOf="@+id/tv_quiz"
+        app:layout_constraintStart_toStartOf="@+id/tv_quiz" />
+
+    <TextView
+        android:id="@+id/tv_quiz"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/anim_click_text"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="@string/txt_quiz"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/anim_click_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

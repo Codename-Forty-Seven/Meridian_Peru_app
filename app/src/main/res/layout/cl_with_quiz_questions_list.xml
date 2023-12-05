@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_first_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_second_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_1"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_unlock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_second_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_third_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_first_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_2"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_third_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_forth_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_second_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_3"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_forth_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_fifth_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_third_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_4"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_fifth_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_sixth_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_forth_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_5"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sixth_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_seventh_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_fifth_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_6"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_seventh_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_eighth_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_sixth_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_7"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_eighth_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_ninth_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_seventh_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_8"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ninth_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_tenth_question"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_eighth_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_9"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tenth_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/design_for_question_list"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ll_first_question"
+        app:layout_constraintStart_toStartOf="@+id/ll_first_question"
+        app:layout_constraintTop_toBottomOf="@+id/ll_ninth_question">
+
+        <TextView
+            android:id="@+id/tv_quiz_question_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:text="@string/txt_quiz_question_10"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_quiz_question_10"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_lock" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@
         android:icon="@drawable/pave_way"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/menu_events"
+        android:id="@+id/menu_festivals"
         android:icon="@drawable/events"
         app:showAsAction="ifRoom" />
     <item

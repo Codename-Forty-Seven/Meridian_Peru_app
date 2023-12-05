@@ -4,5 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_system_item">#DF6E57</color>
     <color name="color_for_share">#90A3A3A3</color>
+    <color name="bg_for_question_list">#98454544</color>
     <color name="bg_for_splash_screen"> #807c433a</color>
+    <color name="bg_for_incomplete_quiz"> #9d7329</color>
+    <color name="bg_for_complete_quiz"> #527f38</color>
+    <color name="bg_for_navigation_bar"> #c43d2f</color>
 </resources>
