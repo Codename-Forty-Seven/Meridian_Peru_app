@@ -30,8 +30,8 @@ public class MainGameUtils {
         gameProcessInterface.showAllOpenCities(ll_with_cities);
     }
 
-    public void showFestivalElements(TextView tv_with_festival) {
-        gameProcessInterface.showFestivalElements(tv_with_festival);
+    public void showFestivalElements(View cl_with_festival) {
+        gameProcessInterface.showFestivalElements(cl_with_festival);
     }
 
     public void showMainElements(View cl_main_page) {
@@ -48,6 +48,10 @@ public class MainGameUtils {
 
     public void showQuizListQuestions(View cl_with_quiz_questions_list, int currentLevel){
         gameProcessInterface.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+    }
+
+    public void showQuizListProgress(View cl_with_progress, int currentLevel){
+        gameProcessInterface.showQuizListProgress(cl_with_progress, currentLevel);
     }
 
     public void showFestivalDuringLevel(int currentLevel, TextView textView) {

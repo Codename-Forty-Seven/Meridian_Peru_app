@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_london_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_for_progress_city"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_valencia_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_london_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_london"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_villajoyosa_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/london_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_valencia_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_albufera_progress"
+        app:layout_constraintEnd_toEndOf="@+id/ll_london_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_london_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_london_progress">
+
+        <TextView
+            android:id="@+id/tv_valencia_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_valencia"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/valencia_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_valencia"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_albufera_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_ajim_progress"
+        app:layout_constraintEnd_toEndOf="@+id/ll_valencia_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_valencia_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_valencia_progress">
+
+        <TextView
+            android:id="@+id/tv_albufera_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_albufera"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/albufera_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_albufera"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ajim_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_tamanrasset_progress"
+        app:layout_constraintEnd_toEndOf="@+id/ll_albufera_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_albufera_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_albufera_progress">
+
+
+        <TextView
+            android:id="@+id/tv_ajim_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_ajim"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/ajim_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_ajim"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tamanrasset_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_gonna_re_zhu_progress"
+        app:layout_constraintEnd_toEndOf="@+id/ll_ajim_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_ajim_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_ajim_progress">
+
+        <TextView
+            android:id="@+id/tv_tamanrasset_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_tamanrasset"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/tamanrasset_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_tamanrasset"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_gonna_re_zhu_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_longa_market_progress"
+        app:layout_constraintEnd_toEndOf="@+id/ll_tamanrasset_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_tamanrasset_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_tamanrasset_progress">
+
+        <TextView
+            android:id="@+id/tv_gonna_re_zhu_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_gonna_re_zhu"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/gonna_re_zhu_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_gonna_re_zhu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_longa_market_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_botswana_progress"
+        app:layout_constraintEnd_toEndOf="@+id/ll_gonna_re_zhu_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_gonna_re_zhu_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_gonna_re_zhu_progress">
+
+        <TextView
+            android:id="@+id/tv_longa_market_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_longa_market"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/longa_market_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_longa_market"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_botswana_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toTopOf="@+id/ll_antarctica_progress"
+        app:layout_constraintEnd_toEndOf="@+id/ll_longa_market_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_longa_market_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_longa_market_progress">
+
+        <TextView
+            android:id="@+id/tv_botswana_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_botswana"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/botswana_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_botswana"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_antarctica_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ll_botswana_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_botswana_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_botswana_progress">
+
+        <TextView
+            android:id="@+id/tv_antarctica_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/abril_fatface"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/txt_antarctica"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <meridian.travel.peru.app.utils.CircularProgressBar
+            android:id="@+id/antarctica_progress_bar"
+            android:layout_width="5dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_lock_antarctica"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/img_lock" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ public class ValenciaGameUtils implements GameProcessInterface {
     }
 
     @Override
-    public void showFestivalElements(TextView viewToShow) {
+    public void showFestivalElements(View viewToShow) {
 
     }
 
@@ -35,6 +35,11 @@ public class ValenciaGameUtils implements GameProcessInterface {
 
     @Override
     public void showQuizListQuestions(View viewToShow, int currentLevel) {
+
+    }
+
+    @Override
+    public void showQuizListProgress(View cl_with_progress, int currentLevel) {
 
     }
 

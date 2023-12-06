@@ -9,4 +9,6 @@
     <color name="bg_for_incomplete_quiz"> #9d7329</color>
     <color name="bg_for_complete_quiz"> #527f38</color>
     <color name="bg_for_navigation_bar"> #c43d2f</color>
+    <color name="bg_for_complete_pb"> #c43d2f</color>
+    <color name="bg_for_un_complete_pb"> #e5b401</color>
 </resources>
