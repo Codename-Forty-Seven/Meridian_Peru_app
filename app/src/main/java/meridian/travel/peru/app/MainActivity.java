@@ -1,11 +1,18 @@
 package meridian.travel.peru.app;
 
+import static meridian.travel.peru.app.utils.Constants.KEY_PREF_CURRENT_STOP_NUMBER;
+import static meridian.travel.peru.app.utils.Constants.NAME_PREF;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -13,6 +20,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import meridian.travel.peru.app.activities.allMap.AllMapActivity;
 import meridian.travel.peru.app.utils.MainGameUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,15 +29,18 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout ll_london_progress, ll_valencia_progress, ll_albufera_progress, ll_ajim_progress,
             ll_tamanrasset_progress, ll_gonna_re_zhu_progress, ll_longa_market_progress, ll_botswana_progress, ll_antarctica_progress;
     private ConstraintLayout cl_for_sharing, cl_main_page, cl_for_study_about_current_stop,
-            cl_with_quiz_questions, cl_with_quiz_questions_list, cl_with_cities, cl_with_festival,
-            cl_with_photos, cl_with_progress;
+            cl_with_quiz_question, cl_with_quiz_questions_list, cl_with_cities, cl_with_festival,
+            cl_with_photos, cl_with_progress, cl_with_info_about_current_city;
     private ImageView img_current_stop, img_current_city, img_map_marker;
     private ImageButton img_btn_airbnb, img_btn_booking;
     private int currentLevel = 1, currentMenuItem = 0;
     private String previousLayout = "";
     private boolean firstStart;
     private TextView tv_current_city, tv_london, tv_valencia, tv_albufera, tv_ajim, tv_tamanrasset, tv_gonna_re_zhu,
-            tv_longa_market, tv_botswana, tv_antarctica, tv_study, tv_quiz, tv_with_festival, tv_header_for_london_quiz, tv_main_txt_london_quiz;
+            tv_longa_market, tv_botswana, tv_antarctica, tv_study, tv_quiz, tv_with_festival, tv_london_progress, tv_valencia_progress, tv_albufera_progress,
+            tv_ajim_progress, tv_tamanrasset_progress, tv_gonna_re_zhu_progress, tv_longa_market_progress, tv_botswana_progress, tv_antarctica_progress,
+            tv_quiz_question_1, tv_quiz_question_2, tv_quiz_question_3, tv_quiz_question_4, tv_quiz_question_5, tv_quiz_question_6, tv_quiz_question_7,
+            tv_quiz_question_8, tv_quiz_question_9, tv_quiz_question_10, tv_quiz_variant_a, tv_quiz_variant_b, tv_quiz_variant_c, tv_quiz_variant_d;
     private MainGameUtils mainGameUtils;
     private final int menu_learn = R.id.menu_learn,
             menu_pave_way = R.id.menu_pave_way,
@@ -41,18 +52,82 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initAllComponents();
+        //handle progress activity
         ll_london_progress.setOnClickListener(v -> {
             previousLayout = "cl_with_progress";
             hideAllComponents();
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
+        tv_london_progress.setOnClickListener(v -> {
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
+        //handle show questions
+        tv_quiz_question_1.setOnClickListener(v -> {
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
+        //handle all way at the map
+        img_current_map_element.setOnClickListener(v -> {
+            Intent goAllMapActivity = new Intent(this, AllMapActivity.class);
+            goAllMapActivity.putExtra(KEY_PREF_CURRENT_STOP_NUMBER, currentLevel);
+            startActivity(goAllMapActivity);
+        });
+        //handle touch answers
+        tv_quiz_variant_a.setOnClickListener(v -> {
+            if (mainGameUtils.checkAnswerClick(tv_quiz_variant_a, currentLevel)) {
+                Toast.makeText(this, R.string.txt_right_answer, Toast.LENGTH_LONG).show();
+                addCountProgress(currentLevel);
+                currentLevel++;
+                onBackPressed();
+            } else {
+                Toast.makeText(this, R.string.txt_wrong_answer, Toast.LENGTH_LONG).show();
+            }
+        });
+        tv_quiz_variant_b.setOnClickListener(v -> {
+            if (mainGameUtils.checkAnswerClick(tv_quiz_variant_b, currentLevel)) {
+                Toast.makeText(this, R.string.txt_right_answer, Toast.LENGTH_LONG).show();
+                addCountProgress(currentLevel);
+                currentLevel++;
+                onBackPressed();
+            } else {
+                Toast.makeText(this, R.string.txt_wrong_answer, Toast.LENGTH_LONG).show();
+            }
+        });
+        tv_quiz_variant_c.setOnClickListener(v -> {
+            if (mainGameUtils.checkAnswerClick(tv_quiz_variant_c, currentLevel)) {
+                Toast.makeText(this, R.string.txt_right_answer, Toast.LENGTH_LONG).show();
+                addCountProgress(currentLevel);
+                currentLevel++;
+                onBackPressed();
+            } else {
+                Toast.makeText(this, R.string.txt_wrong_answer, Toast.LENGTH_LONG).show();
+            }
+        });
+        tv_quiz_variant_d.setOnClickListener(v -> {
+            if (mainGameUtils.checkAnswerClick(tv_quiz_variant_d, currentLevel)) {
+                Toast.makeText(this, R.string.txt_right_answer, Toast.LENGTH_LONG).show();
+                addCountProgress(currentLevel);
+                currentLevel++;
+                onBackPressed();
+            } else {
+                Toast.makeText(this, R.string.txt_wrong_answer, Toast.LENGTH_LONG).show();
+            }
+        });
+
         img_btn_airbnb.setOnClickListener(v -> {
 //todo: create HTTP request to tickets for current city
         });
         img_btn_booking.setOnClickListener(v -> {
 //todo: create HTTP request to hotels for current city
         });
+        //handle touch to map marker
         img_map_marker.setOnClickListener(v -> {
+            hideAllComponents();
+            previousLayout = "cl_main_page";
+            mainGameUtils.showInfoAboutCurrentPlace(cl_with_info_about_current_city, currentLevel);
 //todo: show info about current city
         });
         tv_london.setOnClickListener(v -> {
@@ -78,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case menu_pave_way:
                     hideAllComponents();
-                    mainGameUtils.showMainElements(cl_main_page);
+                    mainGameUtils.showMainElements(cl_main_page, img_map_marker);
                     return true;
                 case menu_festivals:
                     hideAllComponents();
@@ -100,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
         checkPolicy();
         currentLevel = mainGameUtils.initGameProcessInterface(this);
         if (firstStart) {
-            mainGameUtils.showMainElements(cl_main_page);
+            mainGameUtils.showMainElements(cl_main_page, img_map_marker);
             firstStart = false;
         }
         setMenuInCorrectPosition(currentMenuItem);
@@ -144,16 +219,40 @@ public class MainActivity extends AppCompatActivity {
         tv_antarctica = findViewById(R.id.tv_antarctica);
         tv_quiz = findViewById(R.id.tv_quiz);
         tv_study = findViewById(R.id.tv_study);
+        tv_london_progress = findViewById(R.id.tv_london_progress);
+        tv_valencia_progress = findViewById(R.id.tv_valencia_progress);
+        tv_albufera_progress = findViewById(R.id.tv_albufera_progress);
+        tv_ajim_progress = findViewById(R.id.tv_ajim_progress);
+        tv_tamanrasset_progress = findViewById(R.id.tv_tamanrasset_progress);
+        tv_gonna_re_zhu_progress = findViewById(R.id.tv_gonna_re_zhu_progress);
+        tv_longa_market_progress = findViewById(R.id.tv_longa_market_progress);
+        tv_botswana_progress = findViewById(R.id.tv_botswana_progress);
+        tv_antarctica_progress = findViewById(R.id.tv_antarctica_progress);
+        tv_quiz_question_1 = findViewById(R.id.tv_quiz_question_1);
+        tv_quiz_question_2 = findViewById(R.id.tv_quiz_question_2);
+        tv_quiz_question_3 = findViewById(R.id.tv_quiz_question_3);
+        tv_quiz_question_4 = findViewById(R.id.tv_quiz_question_4);
+        tv_quiz_question_5 = findViewById(R.id.tv_quiz_question_5);
+        tv_quiz_question_6 = findViewById(R.id.tv_quiz_question_6);
+        tv_quiz_question_7 = findViewById(R.id.tv_quiz_question_7);
+        tv_quiz_question_8 = findViewById(R.id.tv_quiz_question_8);
+        tv_quiz_question_9 = findViewById(R.id.tv_quiz_question_9);
+        tv_quiz_question_10 = findViewById(R.id.tv_quiz_question_10);
+        tv_quiz_variant_a = findViewById(R.id.tv_quiz_variant_a);
+        tv_quiz_variant_b = findViewById(R.id.tv_quiz_variant_b);
+        tv_quiz_variant_c = findViewById(R.id.tv_quiz_variant_c);
+        tv_quiz_variant_d = findViewById(R.id.tv_quiz_variant_d);
         //Bigger views
         cl_for_sharing = findViewById(R.id.cl_for_sharing);
         cl_for_study_about_current_stop = findViewById(R.id.cl_for_study_about_current_stop);
         cl_with_cities = findViewById(R.id.cl_with_cities);
         cl_main_page = findViewById(R.id.cl_main_page);
-        cl_with_quiz_questions = findViewById(R.id.cl_with_quiz_questions);
+        cl_with_quiz_question = findViewById(R.id.cl_with_quiz_question);
         cl_with_quiz_questions_list = findViewById(R.id.cl_with_quiz_questions_list);
         cl_with_festival = findViewById(R.id.cl_with_festival);
         cl_with_photos = findViewById(R.id.cl_with_photos);
         cl_with_progress = findViewById(R.id.cl_with_progress);
+        cl_with_info_about_current_city = findViewById(R.id.cl_with_info_about_current_city);
         ll_london_progress = findViewById(R.id.ll_london_progress);
         ll_valencia_progress = findViewById(R.id.ll_valencia_progress);
         ll_albufera_progress = findViewById(R.id.ll_albufera_progress);
@@ -190,21 +289,23 @@ public class MainActivity extends AppCompatActivity {
             default:
                 bottomNavigationView.setSelectedItemId(R.id.menu_pave_way);
                 hideAllComponents();
-                mainGameUtils.showMainElements(cl_main_page);
+                mainGameUtils.showMainElements(cl_main_page, img_map_marker);
                 break;
         }
     }
 
     private void hideAllComponents() {
+        mainGameUtils.stopMarkerAnimation();
         cl_for_sharing.setVisibility(View.GONE);
         cl_with_cities.setVisibility(View.GONE);
         cl_main_page.setVisibility(View.GONE);
         cl_for_study_about_current_stop.setVisibility(View.GONE);
-        cl_with_quiz_questions.setVisibility(View.GONE);
+        cl_with_quiz_question.setVisibility(View.GONE);
         cl_with_quiz_questions_list.setVisibility(View.GONE);
         cl_with_festival.setVisibility(View.GONE);
         cl_with_photos.setVisibility(View.GONE);
         cl_with_progress.setVisibility(View.GONE);
+        cl_with_info_about_current_city.setVisibility(View.GONE);
     }
 
     private void returnBack(String previousLayout) {
@@ -217,18 +318,30 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case "cl_main_page":
                     hideAllComponents();
-                    mainGameUtils.showAllOpenCities(cl_main_page);
+                    mainGameUtils.showMainElements(cl_main_page, img_map_marker);
                     this.previousLayout = "";
                     break;
                 case "cl_with_progress":
                     hideAllComponents();
-                    mainGameUtils.showAllOpenCities(cl_with_progress);
+                    mainGameUtils.showQuizListProgress(cl_with_progress, currentLevel);
                     this.previousLayout = "";
+                    break;
+                case "cl_with_quiz_questions_list":
+                    hideAllComponents();
+                    mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+                    this.previousLayout = "cl_with_progress";
                     break;
                 default:
                     finish();
                     break;
             }
         }
+    }
+
+    private void addCountProgress(int currentLevel) {
+        SharedPreferences prefs = getSharedPreferences(NAME_PREF, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt(KEY_PREF_CURRENT_STOP_NUMBER, currentLevel);
+        editor.apply();
     }
 }

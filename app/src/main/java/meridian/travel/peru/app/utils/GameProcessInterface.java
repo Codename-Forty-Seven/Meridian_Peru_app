@@ -13,4 +13,7 @@ public interface GameProcessInterface {
     void showQuizListQuestions(View viewToShow, int currentLevel);
     void showQuizListProgress(View cl_with_progress, int currentLevel);
     void showViewForStudy(View... viewToShow);
+   void showQuestionOnView(View cl_with_quiz_question, int currentLevel);
+    boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel);
+    void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel);
 }

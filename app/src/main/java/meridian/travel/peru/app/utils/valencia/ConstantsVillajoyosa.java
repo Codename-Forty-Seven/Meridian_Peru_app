@@ -1,6 +1,6 @@
 package meridian.travel.peru.app.utils.valencia;
 
-public class ConstantsValencia {
+public class ConstantsVillajoyosa {
     public static final String TXT_MAIN_VILLAJOYOSA = "A municipality in Spain, part of the province of Alicante in the Autonomous Community of Valencia (Autonomous Community). The municipality is located in the district (comarca) of Marina Baja. It occupies an area of 59.25 km². The population is more than 35000 people. Distance to the administrative center of the province of Alicante - 32 km." +
             "Villajoyosa is located in the Mediterranean climate zone. Like most of the cities of Costa Blanca, it welcomes tourists all year round. Villahoyosa is comfortably warm in summer (average temperature +26C), not cold in winter (+10-15C). Bathing season in the resort lasts from the end of April to the end of October." +
             "A real jewel of the Costa Blanca is the largest amusement and recreation park near Villahoyosa - Terra Mitica, skillfully designed in the original style based on the ancient civilizations of the Mediterranean. There are water attractions, including the Aqualandia water park and the Mundomar marine animal park, breathtaking mechanical rides and all kinds of slides.";

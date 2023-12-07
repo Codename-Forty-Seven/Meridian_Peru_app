@@ -6,10 +6,10 @@ import android.widget.TextView;
 
 import meridian.travel.peru.app.utils.GameProcessInterface;
 
-public class ValenciaGameUtils implements GameProcessInterface {
+public class VillajoyosaGameUtils implements GameProcessInterface {
     private final Activity activity;
 
-    public ValenciaGameUtils(Activity activity){
+    public VillajoyosaGameUtils(Activity activity){
         this.activity = activity;
     }
 
@@ -45,6 +45,21 @@ public class ValenciaGameUtils implements GameProcessInterface {
 
     @Override
     public void showViewForStudy(View... viewToShow) {
+
+    }
+
+    @Override
+    public void showQuestionOnView(View cl_with_quiz_question, int currentLevel) {
+
+    }
+
+    @Override
+    public boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel) {
+        return false;
+    }
+
+    @Override
+    public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
 
     }
 }

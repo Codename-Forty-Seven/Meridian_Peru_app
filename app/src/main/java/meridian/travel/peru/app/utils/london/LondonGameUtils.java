@@ -1,9 +1,15 @@
 package meridian.travel.peru.app.utils.london;
 
 import static android.content.ContentValues.TAG;
+import static meridian.travel.peru.app.utils.Constants.KEY_PREF_CURRENT_STOP_NUMBER;
+import static meridian.travel.peru.app.utils.Constants.NAME_PREF;
+import static meridian.travel.peru.app.utils.london.ConstantsLondon.FIRST_QUESTION_LONDON;
+import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_LONDON;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_ROYAL_OBSERVATORY;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -525,6 +531,42 @@ public class LondonGameUtils implements GameProcessInterface {
             animToShowViews(view);
     }
 
+    @Override
+    public void showQuestionOnView(View cl_with_quiz_question, int currentLevel) {
+        TextView tv_main_question = activity.findViewById(R.id.tv_quiz_question);
+        switch (currentLevel) {
+            case 1:
+                tv_main_question.setText(FIRST_QUESTION_LONDON);
+                animToShowViews(cl_with_quiz_question);
+                break;
+        }
+    }
+
+    @Override
+    public boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel) {
+        switch (currentLevel) {
+            case 1:
+                TextView rightAnswer = activity.findViewById(R.id.tv_quiz_variant_a);
+                return tv_quiz_variant.getId() == rightAnswer.getId();
+            default:
+
+                return false;
+        }
+    }
+
+    @Override
+    public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
+        if (currentLevel >0 && currentLevel <=10){
+            ImageView img_current_city_marker = activity.findViewById(R.id.img_current_city_marker);
+            TextView tv_header_current_city_marker = activity.findViewById(R.id.tv_header_current_city_marker);
+            TextView tv_main_text_current_city_marker = activity.findViewById(R.id.tv_main_text_current_city_marker);
+            img_current_city_marker.setImageResource(R.drawable.img_london_7);
+            tv_header_current_city_marker.setText(R.string.txt_london);
+            tv_main_text_current_city_marker.setText(TXT_MAIN_LONDON);
+            animToShowViews(cl_with_info_about_current_city);
+        }
+    }
+
     public void animToShowViews(View whatShow) {
         whatShow.setVisibility(View.VISIBLE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -538,5 +580,4 @@ public class LondonGameUtils implements GameProcessInterface {
         animationSet.setDuration(1000);
         whatShow.startAnimation(animationSet);
     }
-
 }

@@ -79,7 +79,7 @@
             android:fontFamily="@font/abril_fatface"
             android:gravity="center"
             android:padding="7dp"
-            android:text="@string/txt_valencia"
+            android:text="@string/txt_villajoyosa"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="18sp" />

@@ -15,6 +15,10 @@
         android:theme="@style/Theme.MeridianPeruApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.allMap.AllMapActivity"
+
+            android:exported="false" />
+        <activity
             android:name=".activities.ProfileActivity"
             android:exported="false" />
         <activity
