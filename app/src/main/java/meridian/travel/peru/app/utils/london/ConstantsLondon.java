@@ -3,54 +3,64 @@ package meridian.travel.peru.app.utils.london;
 public class ConstantsLondon {
     public static final String FIRST_QUESTION_LONDON = "Which river flows through London?\n" +
             "\n" +
-            "a) Seine\n" +
-            "b) Thames\n" +
-            "c) the Danube";
+            "a) Thames\n" +
+            "b) Seine\n" +
+            "c) Amazon\n" +
+            "d) the Danube";
     public static final String SECOND_QUESTION_LONDON = "Which of the following is not a listed building in London?\n" +
             "\n" +
             "a) Big Ben\n" +
             "b) The Tower\n" +
-            "c) The Kremlin";
+            "c) The Rabbit\n" +
+            "d) The Statue of liberty";
     public static final String THIRD_QUESTION_LONDON = "Which organization is located in the Greenwich neighborhood?\n" +
             "\n" +
             "a) The International Bank\n" +
             "b) The Royal Observatory\n" +
-            "c) Greenwich Students' League";
+            "c) The Oxford University\n" +
+            "d) Greenwich Students' League";
     public static final String FORTH_QUESTION_LONDON = "How is the time system (GMT) determined?\n" +
             "\n" +
             "a) From the Greenwich Meridian\n" +
             "b) From the Paris meridian\n" +
-            "c) From the Moscow meridian";
+            "c) From the Kyiv meridian\n" +
+            "d) What meridian?";
     public static final String FIFTH_QUESTION_LONDON = "What is the function of the Greenwich Meridian?\n" +
             "\n" +
             "a) Determination of latitude\n" +
             "b) Determination of longitude\n" +
-            "c) Determining the height above sea level";
+            "c) Know about weather\n" +
+            "d) Determining the height above sea level";
     public static final String SIXTH_QUESTION_LONDON = "What is the Clock House at the Royal Observatory known for?\n" +
             "\n" +
             "a) For making clocks\n" +
             "b) For keeping time\n" +
-            "c) For astronomical observations";
+            "c) To close a hole in the wall\n" +
+            "d) For astronomical observations";
     public static final String SEVENTH_QUESTION_LONDON = "In what year was the Greenwich Meridian determined at an international conference?\n" +
             "\n" +
             "a) 1776\n" +
             "b) 1884\n" +
-            "c) 1950";
+            "c) 1654\n" +
+            "d) 1950";
     public static final String EIGHTH_QUESTION_LONDON = "Which objects are included in the list of historical monuments of London given in the text?\n" +
             "\n" +
             "a) Eiffel Tower\n" +
             "b) British Museum\n" +
-            "c) The Colosseum";
+            "c) Independence Square\n" +
+            "d) The Colosseum";
     public static final String NINTH_QUESTION_LONDON = "What became the standard for determining geographic coordinates and time?\n" +
             "\n" +
             "a) Greenwich meridian\n" +
             "b) Equator\n" +
-            "c) North Pole";
+            "c) Asia\n" +
+            "d) North Pole";
     public static final String TENTH_QUESTION_LONDON = "Which city is the capital and largest city of the United Kingdom?\n" +
             "\n" +
             "a) Paris\n" +
             "b) Berlin\n" +
-            "c) London";
+            "c) Birmingham\n" +
+            "d) London";
 
     public static final String TXT_MAIN_LONDON = "London is the capital and largest city of the United Kingdom of Great Britain and Northern Ireland.\n" +
             "Located on the River Thames, London is considered one of the world's financial, cultural and historical centers.\n" +

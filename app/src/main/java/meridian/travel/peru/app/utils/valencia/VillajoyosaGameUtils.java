@@ -44,7 +44,7 @@ public class VillajoyosaGameUtils implements GameProcessInterface {
     }
 
     @Override
-    public void showViewForStudy(View... viewToShow) {
+    public void showViewForStudy(View viewToShow) {
 
     }
 
@@ -61,5 +61,10 @@ public class VillajoyosaGameUtils implements GameProcessInterface {
     @Override
     public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
 
+    }
+
+    @Override
+    public void showSecondPlace(View cl_for_study_about_current_stop) {
+        //Method only for London!!!
     }
 }

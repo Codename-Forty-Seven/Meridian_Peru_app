@@ -295,13 +295,13 @@
         android:layout_margin="8dp"
         android:background="@drawable/design_for_share"
         android:padding="10dp"
-        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <include layout="@layout/cl_for_study_about_current_stop" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

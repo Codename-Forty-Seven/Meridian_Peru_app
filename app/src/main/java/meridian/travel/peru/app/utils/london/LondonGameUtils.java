@@ -1,15 +1,12 @@
 package meridian.travel.peru.app.utils.london;
 
 import static android.content.ContentValues.TAG;
-import static meridian.travel.peru.app.utils.Constants.KEY_PREF_CURRENT_STOP_NUMBER;
-import static meridian.travel.peru.app.utils.Constants.NAME_PREF;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.FIRST_QUESTION_LONDON;
+import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_GREENWICH;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_LONDON;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_ROYAL_OBSERVATORY;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -19,8 +16,6 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import meridian.travel.peru.app.R;
 import meridian.travel.peru.app.utils.CircularProgressBar;
@@ -86,25 +81,22 @@ public class LondonGameUtils implements GameProcessInterface {
                 ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
+                img_1.setEnabled(false);
+                activity.findViewById(R.id.ll_first_question).setEnabled(false);
+                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
                 activity.findViewById(R.id.ll_second_question).setEnabled(true);
                 activity.findViewById(R.id.ll_second_question).setBackground(back);
                 ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
                 img_2.setVisibility(View.GONE);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setEnabled(false);
-                activity.findViewById(R.id.ll_eighth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_ninth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_tenth_question).setEnabled(false);
                 animToShowViews(viewToShow);
                 break;
             }
             case 3: {
-                activity.findViewById(R.id.ll_second_question).setEnabled(true);
+                activity.findViewById(R.id.ll_second_question).setEnabled(false);
+                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
                 activity.findViewById(R.id.ll_second_question).setBackground(back);
                 ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
+                img_2.setEnabled(false);
                 img_2.setImageResource(R.drawable.img_unlock);
                 img_2.setVisibility(View.VISIBLE);
                 activity.findViewById(R.id.ll_third_question).setEnabled(true);
@@ -322,15 +314,16 @@ public class LondonGameUtils implements GameProcessInterface {
 
     @Override
     public void showQuizListProgress(View cl_with_progress, int currentLevel) {
+        Log.d(TAG, "showQuizListProgress: currentLevel: " + currentLevel);
         CircularProgressBar london_progress_bar = activity.findViewById(R.id.london_progress_bar);
-        CircularProgressBar valencia_progress_bar = activity.findViewById(R.id.valencia_progress_bar);
-        CircularProgressBar albufera_progress_bar = activity.findViewById(R.id.albufera_progress_bar);
-        CircularProgressBar ajim_progress_bar = activity.findViewById(R.id.ajim_progress_bar);
-        CircularProgressBar tamanrasset_progress_bar = activity.findViewById(R.id.tamanrasset_progress_bar);
-        CircularProgressBar gonna_re_zhu_progress_bar = activity.findViewById(R.id.gonna_re_zhu_progress_bar);
-        CircularProgressBar longa_market_progress_bar = activity.findViewById(R.id.longa_market_progress_bar);
-        CircularProgressBar botswana_progress_bar = activity.findViewById(R.id.botswana_progress_bar);
-        CircularProgressBar antarctica_progress_bar = activity.findViewById(R.id.antarctica_progress_bar);
+//        CircularProgressBar valencia_progress_bar = activity.findViewById(R.id.valencia_progress_bar);
+//        CircularProgressBar albufera_progress_bar = activity.findViewById(R.id.albufera_progress_bar);
+//        CircularProgressBar ajim_progress_bar = activity.findViewById(R.id.ajim_progress_bar);
+//        CircularProgressBar tamanrasset_progress_bar = activity.findViewById(R.id.tamanrasset_progress_bar);
+//        CircularProgressBar gonna_re_zhu_progress_bar = activity.findViewById(R.id.gonna_re_zhu_progress_bar);
+//        CircularProgressBar longa_market_progress_bar = activity.findViewById(R.id.longa_market_progress_bar);
+//        CircularProgressBar botswana_progress_bar = activity.findViewById(R.id.botswana_progress_bar);
+//        CircularProgressBar antarctica_progress_bar = activity.findViewById(R.id.antarctica_progress_bar);
         ImageView img_lock_valencia = activity.findViewById(R.id.img_lock_valencia);
         ImageView img_lock_albufera = activity.findViewById(R.id.img_lock_albufera);
         ImageView img_lock_ajim = activity.findViewById(R.id.img_lock_ajim);
@@ -345,60 +338,60 @@ public class LondonGameUtils implements GameProcessInterface {
             london_progress_bar.setProgress(currentLevel);
             activity.findViewById(R.id.ll_london_progress).setEnabled(true);
             activity.findViewById(R.id.ll_valencia_progress).setEnabled(false);
-            valencia_progress_bar.setProgressText(10);
-            valencia_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_albufera_progress).setEnabled(false);
-            albufera_progress_bar.setProgressText(10);
-            albufera_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_ajim_progress).setEnabled(false);
-            ajim_progress_bar.setProgressText(10);
-            ajim_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_tamanrasset_progress).setEnabled(false);
-            tamanrasset_progress_bar.setProgressText(10);
-            tamanrasset_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
-            gonna_re_zhu_progress_bar.setProgressText(10);
-            gonna_re_zhu_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
-            longa_market_progress_bar.setProgressText(10);
-            longa_market_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
-            botswana_progress_bar.setProgressText(10);
-            botswana_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
-            antarctica_progress_bar.setProgressText(10);
-            antarctica_progress_bar.setProgress(0);
+//            valencia_progress_bar.setProgressText(10);
+//            valencia_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_albufera_progress).setEnabled(false);
+//            albufera_progress_bar.setProgressText(10);
+//            albufera_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_ajim_progress).setEnabled(false);
+//            ajim_progress_bar.setProgressText(10);
+//            ajim_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_tamanrasset_progress).setEnabled(false);
+//            tamanrasset_progress_bar.setProgressText(10);
+//            tamanrasset_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
+//            gonna_re_zhu_progress_bar.setProgressText(10);
+//            gonna_re_zhu_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
+//            longa_market_progress_bar.setProgressText(10);
+//            longa_market_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
+//            botswana_progress_bar.setProgressText(10);
+//            botswana_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
+//            antarctica_progress_bar.setProgressText(10);
+//            antarctica_progress_bar.setProgress(0);
             animToShowViews(cl_with_progress);
-        } else if (currentLevel > 10 && currentLevel <= 20) {
-            london_progress_bar.setProgressText(10);
-            london_progress_bar.setProgress(10);
-            activity.findViewById(R.id.ll_london_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_london_progress).setBackground(completeCity);
-            activity.findViewById(R.id.ll_valencia_progress).setEnabled(true);
-            valencia_progress_bar.setProgressText(10);
-            valencia_progress_bar.setProgress(currentLevel - 10);
-            activity.findViewById(R.id.ll_albufera_progress).setEnabled(false);
-            albufera_progress_bar.setProgressText(10);
-            albufera_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_ajim_progress).setEnabled(false);
-            ajim_progress_bar.setProgressText(10);
-            ajim_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_tamanrasset_progress).setEnabled(false);
-            tamanrasset_progress_bar.setProgressText(10);
-            tamanrasset_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
-            gonna_re_zhu_progress_bar.setProgressText(10);
-            gonna_re_zhu_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
-            longa_market_progress_bar.setProgressText(10);
-            longa_market_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
-            botswana_progress_bar.setProgressText(10);
-            botswana_progress_bar.setProgress(0);
-            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
-            antarctica_progress_bar.setProgressText(10);
-            antarctica_progress_bar.setProgress(0);
-            animToShowViews(cl_with_progress);
+//        } else if (currentLevel > 10 && currentLevel <= 20) {
+//            london_progress_bar.setProgressText(10);
+//            london_progress_bar.setProgress(10);
+//            activity.findViewById(R.id.ll_london_progress).setEnabled(false);
+//            activity.findViewById(R.id.ll_london_progress).setBackground(completeCity);
+//            activity.findViewById(R.id.ll_valencia_progress).setEnabled(true);
+//            valencia_progress_bar.setProgressText(10);
+//            valencia_progress_bar.setProgress(currentLevel - 10);
+//            activity.findViewById(R.id.ll_albufera_progress).setEnabled(false);
+//            albufera_progress_bar.setProgressText(10);
+//            albufera_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_ajim_progress).setEnabled(false);
+//            ajim_progress_bar.setProgressText(10);
+//            ajim_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_tamanrasset_progress).setEnabled(false);
+//            tamanrasset_progress_bar.setProgressText(10);
+//            tamanrasset_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
+//            gonna_re_zhu_progress_bar.setProgressText(10);
+//            gonna_re_zhu_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
+//            longa_market_progress_bar.setProgressText(10);
+//            longa_market_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
+//            botswana_progress_bar.setProgressText(10);
+//            botswana_progress_bar.setProgress(0);
+//            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
+//            antarctica_progress_bar.setProgressText(10);
+//            antarctica_progress_bar.setProgress(0);
+//            animToShowViews(cl_with_progress);
         }
 //        switch (currentLevel) {
 //            case 1: {
@@ -522,13 +515,27 @@ public class LondonGameUtils implements GameProcessInterface {
     }
 
     @Override
-    public void showViewForStudy(View... viewToShow) {
+    public void showViewForStudy(View viewToShow) {
         TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
         TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
+        TextView tv_next_place_for_study_about_current_stop = activity.findViewById(R.id.tv_next_place_for_study_about_current_stop);
+        tv_next_place_for_study_about_current_stop.setVisibility(View.VISIBLE);
         tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_header_royal_observatory));
         tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_ROYAL_OBSERVATORY);
-        for (View view : viewToShow)
-            animToShowViews(view);
+        animToShowViews(viewToShow);
+    }
+
+    @Override
+    public void showSecondPlace(View cl_for_study_about_current_stop) {
+        TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
+        TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
+        TextView tv_next_place_for_study_about_current_stop = activity.findViewById(R.id.tv_next_place_for_study_about_current_stop);
+        tv_next_place_for_study_about_current_stop.setVisibility(View.VISIBLE);
+        tv_next_place_for_study_about_current_stop.setText(R.string.txt_previous_place);
+        tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_header_greenwich));
+        tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_GREENWICH);
+        animToShowViews(cl_for_study_about_current_stop);
+
     }
 
     @Override
@@ -556,7 +563,7 @@ public class LondonGameUtils implements GameProcessInterface {
 
     @Override
     public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
-        if (currentLevel >0 && currentLevel <=10){
+        if (currentLevel > 0 && currentLevel <= 10) {
             ImageView img_current_city_marker = activity.findViewById(R.id.img_current_city_marker);
             TextView tv_header_current_city_marker = activity.findViewById(R.id.tv_header_current_city_marker);
             TextView tv_main_text_current_city_marker = activity.findViewById(R.id.tv_main_text_current_city_marker);
