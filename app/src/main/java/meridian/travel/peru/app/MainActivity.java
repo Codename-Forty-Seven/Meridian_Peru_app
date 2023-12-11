@@ -399,29 +399,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         img_share_main_1.setOnClickListener(v -> {
-            ImageView img_main_1 = findViewById(R.id.img_main_1);
-            // Отримуємо URI поточного зображення
-            Uri imageUri = getResourceUri(img_main_1);
 
-            // Створюємо Intent для надсилання зображення
+            ImageView img_main_1 = findViewById(R.id.img_main_1);
+            Uri imageUri = mainGameUtils.getResourceUri(img_main_1);
+
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("image/jpeg");
-
-            // Додаємо URI до Intent
             shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
             startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_2.setOnClickListener(v -> {
+            ImageView img_main_2 = findViewById(R.id.img_main_2);
+            Uri imageUri = mainGameUtils.getResourceUri(img_main_2);
 
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("image/jpeg");
+            shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_3.setOnClickListener(v -> {
+            ImageView img_main_3 = findViewById(R.id.img_main_3);
+            Uri imageUri = mainGameUtils.getResourceUri(img_main_3);
 
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("image/jpeg");
+            shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_4.setOnClickListener(v -> {
+            ImageView img_main_4 = findViewById(R.id.img_main_4);
+            Uri imageUri = mainGameUtils.getResourceUri(img_main_4);
 
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("image/jpeg");
+            shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_5.setOnClickListener(v -> {
+            ImageView img_main_5 = findViewById(R.id.img_main_5);
+            Uri imageUri = mainGameUtils.getResourceUri(img_main_5);
 
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("image/jpeg");
+            shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_btn_share_progress.setOnClickListener(v -> {
             String shareText = getString(R.string.txt_planning_to_go) + " " + tv_current_city.getText().toString().trim() + " " + getString(R.string.txt_go_with_me);
@@ -657,7 +678,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        checkPolicy();
+//        checkPolicy();
         currentLevel = prefs.getInt(KEY_PREF_CURRENT_STOP_NUMBER, 1);
         currentCity = mainGameUtils.initGameProcessInterface(MainActivity.this, currentLevel);
         Log.d(TAG, "onResume: currentCity: " + currentCity);
@@ -996,6 +1017,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Uri getResourceUri(ImageView imageView) {
         // Отримуємо ID ресурсу поточного зображення
+        imageView.setTag(imageView.getResources());
         int resourceId = (Integer) imageView.getTag();
 
         // Отримуємо URI з ресурсу

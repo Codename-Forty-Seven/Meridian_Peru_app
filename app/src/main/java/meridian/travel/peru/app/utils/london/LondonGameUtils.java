@@ -58,8 +58,24 @@ public class LondonGameUtils implements GameProcessInterface {
 
     @Override
     public void showPictures(View viewToShow, TextView tv_whatClick) {
-        if (tv_whatClick == activity.findViewById(R.id.tv_london))
-            animToShowViews(viewToShow);
+        ImageView img_main_1 = activity.findViewById(R.id.img_main_1);
+        ImageView img_main_2 = activity.findViewById(R.id.img_main_2);
+        ImageView img_main_3 = activity.findViewById(R.id.img_main_3);
+        ImageView img_main_4 = activity.findViewById(R.id.img_main_4);
+        ImageView img_main_5 = activity.findViewById(R.id.img_main_5);
+        if (tv_whatClick == activity.findViewById(R.id.tv_london)) {
+            img_main_1.setImageResource(R.drawable.img_london);
+            img_main_1.setTag(R.drawable.img_london);
+            img_main_2.setImageResource(R.drawable.img_london_2);
+            img_main_2.setTag(R.drawable.img_london_2);
+            img_main_3.setImageResource(R.drawable.img_london_3);
+            img_main_3.setTag(R.drawable.img_london_3);
+            img_main_4.setImageResource(R.drawable.img_london_4);
+            img_main_4.setTag(R.drawable.img_london_4);
+            img_main_5.setImageResource(R.drawable.img_london_5);
+            img_main_5.setTag(R.drawable.img_london_5);
+        }
+        animToShowViews(viewToShow);
     }
 
     @Override

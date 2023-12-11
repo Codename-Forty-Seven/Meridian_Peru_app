@@ -83,19 +83,32 @@ public class VillajoyosaGameUtils implements GameProcessInterface {
         ImageView img_main_5 = activity.findViewById(R.id.img_main_5);
         if (tv_whatClick == activity.findViewById(R.id.tv_london)) {
             img_main_1.setImageResource(R.drawable.img_london);
+            img_main_1.setTag(R.drawable.img_london);
             img_main_2.setImageResource(R.drawable.img_london_2);
+            img_main_2.setTag(R.drawable.img_london_2);
             img_main_3.setImageResource(R.drawable.img_london_3);
+            img_main_3.setTag(R.drawable.img_london_3);
             img_main_4.setImageResource(R.drawable.img_london_4);
+            img_main_4.setTag(R.drawable.img_london_4);
             img_main_5.setImageResource(R.drawable.img_london_5);
-            animToShowViews(viewToShow);
+            img_main_5.setTag(R.drawable.img_london_5);
         } else if (tv_whatClick == activity.findViewById(R.id.tv_villajoyosa)) {
+            ConstraintLayout cl_with_photo_4 = activity.findViewById(R.id.cl_with_photo_4);
+            ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) cl_with_photo_4.getLayoutParams();
+            layoutParams.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
+            cl_with_photo_4.setLayoutParams(layoutParams);
             img_main_1.setImageResource(R.drawable.img_villajoyosa);
+            img_main_1.setTag(R.drawable.img_villajoyosa);
             img_main_2.setImageResource(R.drawable.img_villajoyosa_2);
+            img_main_2.setTag(R.drawable.img_villajoyosa_2);
             img_main_3.setImageResource(R.drawable.img_villajoyosa_3);
+            img_main_3.setTag(R.drawable.img_villajoyosa_3);
             img_main_4.setImageResource(R.drawable.img_villajoyosa_4);
+            img_main_4.setTag(R.drawable.img_villajoyosa_4);
             img_main_5.setImageResource(R.drawable.img_villajoyosa_5);
-            animToShowViews(viewToShow);
+            img_main_5.setTag(R.drawable.img_villajoyosa_5);
         }
+        animToShowViews(viewToShow);
     }
 
     @Override

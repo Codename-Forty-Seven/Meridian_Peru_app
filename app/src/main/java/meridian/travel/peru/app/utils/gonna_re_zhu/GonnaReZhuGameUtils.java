@@ -92,40 +92,70 @@ public class GonnaReZhuGameUtils implements GameProcessInterface {
         ImageView img_main_5 = activity.findViewById(R.id.img_main_5);
         if (tv_whatClick == activity.findViewById(R.id.tv_london)) {
             img_main_1.setImageResource(R.drawable.img_london);
+            img_main_1.setTag(R.drawable.img_london);
             img_main_2.setImageResource(R.drawable.img_london_2);
+            img_main_2.setTag(R.drawable.img_london_2);
             img_main_3.setImageResource(R.drawable.img_london_3);
+            img_main_3.setTag(R.drawable.img_london_3);
             img_main_4.setImageResource(R.drawable.img_london_4);
+            img_main_4.setTag(R.drawable.img_london_4);
             img_main_5.setImageResource(R.drawable.img_london_5);
+            img_main_5.setTag(R.drawable.img_london_5);
         } else if (tv_whatClick == activity.findViewById(R.id.tv_villajoyosa)) {
             img_main_1.setImageResource(R.drawable.img_villajoyosa);
+            img_main_1.setTag(R.drawable.img_villajoyosa);
             img_main_2.setImageResource(R.drawable.img_villajoyosa_2);
+            img_main_2.setTag(R.drawable.img_villajoyosa_2);
             img_main_3.setImageResource(R.drawable.img_villajoyosa_3);
+            img_main_3.setTag(R.drawable.img_villajoyosa_3);
             img_main_4.setImageResource(R.drawable.img_villajoyosa_4);
+            img_main_4.setTag(R.drawable.img_villajoyosa_4);
             img_main_5.setImageResource(R.drawable.img_villajoyosa_5);
+            img_main_5.setTag(R.drawable.img_villajoyosa_5);
         } else if (tv_whatClick == activity.findViewById(R.id.tv_albufera)) {
             img_main_1.setImageResource(R.drawable.img_albufera_3);
+            img_main_1.setTag(R.drawable.img_albufera_3);
             img_main_2.setImageResource(R.drawable.img_albufera_4);
+            img_main_2.setTag(R.drawable.img_albufera_4);
             img_main_3.setImageResource(R.drawable.img_valencia_3);
+            img_main_3.setTag(R.drawable.img_valencia_3);
             img_main_4.setImageResource(R.drawable.img_valencia_4);
+            img_main_4.setTag(R.drawable.img_valencia_4);
             img_main_5.setImageResource(R.drawable.img_valencia_5);
+            img_main_5.setTag(R.drawable.img_valencia_5);
         } else if (tv_whatClick == activity.findViewById(R.id.tv_ajim)) {
             img_main_1.setImageResource(R.drawable.img_ajim);
+            img_main_1.setTag(R.drawable.img_ajim);
             img_main_2.setImageResource(R.drawable.img_ajim_2);
+            img_main_2.setTag(R.drawable.img_ajim_2);
             img_main_3.setImageResource(R.drawable.img_ajim_3);
+            img_main_3.setTag(R.drawable.img_ajim_3);
             img_main_4.setImageResource(R.drawable.img_ajim_4);
+            img_main_4.setTag(R.drawable.img_ajim_4);
             img_main_5.setImageResource(R.drawable.img_ajim_5);
+            img_main_5.setTag(R.drawable.img_ajim_5);
         } else if (tv_whatClick == activity.findViewById(R.id.tv_tamanrasset)) {
             img_main_1.setImageResource(R.drawable.img_tamanrasset);
+            img_main_1.setTag(R.drawable.img_tamanrasset);
             img_main_2.setImageResource(R.drawable.img_tamanrasset_2);
+            img_main_2.setTag(R.drawable.img_tamanrasset_2);
             img_main_3.setImageResource(R.drawable.img_tamanrasset_3);
+            img_main_3.setTag(R.drawable.img_tamanrasset_3);
             img_main_4.setImageResource(R.drawable.img_tamanrasset_4);
+            img_main_4.setTag(R.drawable.img_tamanrasset_4);
             img_main_5.setImageResource(R.drawable.img_tamanrasset_5);
+            img_main_5.setTag(R.drawable.img_tamanrasset_5);
         } else if (tv_whatClick == activity.findViewById(R.id.tv_gonna_re_zhu)) {
             img_main_1.setImageResource(R.drawable.img_gonarezhou);
+            img_main_1.setTag(R.drawable.img_gonarezhou);
             img_main_2.setImageResource(R.drawable.img_gonarezhou_2);
+            img_main_2.setTag(R.drawable.img_gonarezhou_2);
             img_main_3.setImageResource(R.drawable.img_gonarezhou_3);
+            img_main_3.setTag(R.drawable.img_gonarezhou_3);
             img_main_4.setImageResource(R.drawable.img_gonarezhou_4);
+            img_main_4.setTag(R.drawable.img_gonarezhou_4);
             img_main_5.setImageResource(R.drawable.img_gonarezhou_5);
+            img_main_5.setTag(R.drawable.img_gonarezhou_5);
         }
         animToShowViews(viewToShow);
     }

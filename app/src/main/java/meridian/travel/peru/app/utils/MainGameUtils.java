@@ -5,6 +5,9 @@ import static android.content.ContentValues.TAG;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -28,8 +31,10 @@ public class MainGameUtils {
     private Runnable runnable;
     private int currentIndex = 0;
     private final Handler handler = new Handler();
+    private Activity activity;
 
     public String initGameProcessInterface(Activity activity, int currentLevel) {
+        this.activity = activity;
         String currentCity = "";
         if (currentLevel > 0 && currentLevel <= 10) {
             gameProcessInterface = new LondonGameUtils(activity);
@@ -203,6 +208,17 @@ public class MainGameUtils {
             ids = new int[]{R.drawable.img_festival_antarctica, R.drawable.img_festival_antarctica_2};
         }
         return ids;
+    }
+
+
+    public Uri getResourceUri(ImageView imageView) {
+        int resourceId = (Integer) imageView.getTag();
+
+        Resources res = activity.getResources();
+        return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
+                "://" + res.getResourcePackageName(resourceId)
+                + '/' + res.getResourceTypeName(resourceId)
+                + '/' + res.getResourceEntryName(resourceId));
     }
 
     public void startCityImageAnimation(ImageView img_to_use, int[] imageArray) {
