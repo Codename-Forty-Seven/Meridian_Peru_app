@@ -566,13 +566,13 @@ public class MainActivity extends AppCompatActivity {
         tv_quiz.setOnClickListener(v -> {
             previousLayout = "cl_main_page";
             hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+            mainGameUtils.showQuizListProgress(cl_with_progress, currentLevel);
             bottomNavigationView.setSelectedItemId(R.id.menu_learn);
         });
         tv_quiz_about_current_stop.setOnClickListener(v -> {
             previousLayout = "cl_main_page";
             hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+            mainGameUtils.showQuizListProgress(cl_with_progress, currentLevel);
             bottomNavigationView.setSelectedItemId(R.id.menu_learn);
         });
         tv_next_place_for_study_about_current_stop.setOnClickListener(v -> {
