@@ -80,4 +80,5 @@ public class ConstantsLondon {
             "\n" +
             "Greenwich is an east London neighborhood known for its history and cultural significance.\n" +
             "It is home to the Royal Observatory and the Greenwich Meridian, which is used to determine geographic zero.";
+    public static final String TXT_MAIN_FESTIVAL_LONDON = "This festival attracts hip-hop and grime artists from the UK and the US. As it takes place on weekends in Finsbury Park in central London, it's a great opportunity to combine a weekend of music with a visit to the British capital.";
 }

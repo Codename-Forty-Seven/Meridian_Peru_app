@@ -186,7 +186,7 @@ public class MainGameUtils {
     public int[] getIdDrawablesFestival(int whatPressedId) {
         int[] ids = new int[0];
         if (whatPressedId == R.id.tv_with_festival_london) {
-            ids = new int[]{R.drawable.img_royal_observatory, R.drawable.img_royal_observatory_2};
+            ids = new int[]{R.drawable.img_festival_london, R.drawable.img_festival_london_3, R.drawable.img_festival_london_4};
         } else if (whatPressedId == R.id.tv_with_festival_villajoyosa) {
             ids = new int[]{R.drawable.img_festival_villajoyosa, R.drawable.img_festival_villajoyosa_2, R.drawable.img_festival_villajoyosa_3,
                     R.drawable.img_festival_villajoyosa_4, R.drawable.img_festival_villajoyosa_5};
@@ -226,6 +226,7 @@ public class MainGameUtils {
             @Override
             public void run() {
                 img_to_use.setImageResource(imageArray[currentIndex]);
+                img_to_use.setTag(imageArray[currentIndex]);
                 currentIndex = (currentIndex + 1) % imageArray.length;
                 handler.postDelayed(this, 2000);
             }

@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         tv_london_progress.setOnClickListener(v -> {
-            if (currentLevel > 10) {
+            if (!ll_london_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -95,25 +95,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         ll_villajoyosa_progress.setOnClickListener(v -> {
-            if (currentLevel > 20) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        tv_villajoyosa_progress.setOnClickListener(v -> {
-            if (currentLevel > 20) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        ll_albufera_progress.setOnClickListener(v -> {
-            if (currentLevel > 30) {
+            if (!ll_villajoyosa_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -122,16 +104,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         tv_albufera_progress.setOnClickListener(v -> {
-            if (currentLevel > 30) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        ll_ajim_progress.setOnClickListener(v -> {
-            if (currentLevel > 40) {
+            if (!ll_albufera_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -140,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         tv_ajim_progress.setOnClickListener(v -> {
-            if (currentLevel > 40) {
+            if (!ll_ajim_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -149,25 +122,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         ll_tamanrasset_progress.setOnClickListener(v -> {
-            if (currentLevel > 50) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        tv_tamanrasset_progress.setOnClickListener(v -> {
-            if (currentLevel > 50) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        ll_gonna_re_zhu_progress.setOnClickListener(v -> {
-            if (currentLevel > 60) {
+            if (!ll_tamanrasset_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -176,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         tv_gonna_re_zhu_progress.setOnClickListener(v -> {
-            if (currentLevel > 60) {
+            if (!ll_gonna_re_zhu_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -185,16 +140,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         ll_longa_market_progress.setOnClickListener(v -> {
-            if (currentLevel > 70) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        tv_longa_market_progress.setOnClickListener(v -> {
-            if (currentLevel > 70) {
+            if (!ll_longa_market_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -203,25 +149,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         ll_botswana_progress.setOnClickListener(v -> {
-            if (currentLevel > 80) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        tv_botswana_progress.setOnClickListener(v -> {
-            if (currentLevel > 80) {
-                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
-                return;
-            }
-            previousLayout = "cl_with_progress";
-            hideAllComponents();
-            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
-        });
-        ll_antarctica_progress.setOnClickListener(v -> {
-            if (currentLevel > 90) {
+            if (!ll_botswana_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -230,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
         tv_antarctica_progress.setOnClickListener(v -> {
-            if (currentLevel > 90) {
+            if (!ll_antarctica_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -445,10 +373,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_btn_share_progress.setOnClickListener(v -> {
+
+            Uri imageUri = mainGameUtils.getResourceUri(img_current_festival);
+
             String shareText = getString(R.string.txt_planning_to_go) + " " + tv_current_city.getText().toString().trim() + " " + getString(R.string.txt_go_with_me);
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+            shareIntent.setType("image/jpeg");
+            shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            startActivity(Intent.createChooser(shareIntent, "Share image using"));
 
             Intent chooserIntent = Intent.createChooser(shareIntent, getString(R.string.txt_choose_app_to_share));
 
@@ -527,11 +461,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, R.string.txt_complete_all_quiz, Toast.LENGTH_LONG).show();
                 return;
             }
-//            tv_current_city.setText(currentCity);
-//            previousLayout = "cl_with_festival";
-//            hideAllComponents();
-//            mainGameUtils.startCityImageAnimation(img_current_festival, mainGameUtils.getIdDrawablesFestival(currentLevel));
-//            mainGameUtils.showInfoAboutCurrentFestival(cl_for_sharing, currentLevel, tv_with_festival_london);
+            tv_current_city.setText(getString(R.string.txt_london));
+            previousLayout = "cl_with_festival";
+            hideAllComponents();
+            mainGameUtils.startCityImageAnimation(img_current_festival, mainGameUtils.getIdDrawablesFestival(tv_with_festival_london.getId()));
+            mainGameUtils.showInfoAboutCurrentFestival(cl_for_sharing, currentLevel, tv_with_festival_london);
         });
         tv_with_festival_villajoyosa.setOnClickListener(v -> {
             if (currentLevel < 20) {
@@ -888,6 +822,11 @@ public class MainActivity extends AppCompatActivity {
                     mainGameUtils.showQuizListProgress(cl_with_progress, currentLevel);
                     this.previousLayout = "";
                     break;
+                case "cl_with_festival":
+                    hideAllComponents();
+                    mainGameUtils.showFestivalElements(cl_with_festival);
+                    this.previousLayout = "";
+                    break;
                 case "cl_with_quiz_questions_list":
                     hideAllComponents();
                     mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
@@ -912,30 +851,37 @@ public class MainActivity extends AppCompatActivity {
         if (currentLevel > 10 && currentCity.equals(getString(R.string.txt_london))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = 0;
+            previousLayout = "";
             onResume();
         } else if (currentLevel > 20 && currentCity.equals(getString(R.string.txt_villajoyosa))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = 0;
+            previousLayout = "";
             onResume();
         } else if (currentLevel > 30 && currentCity.equals(getString(R.string.txt_albufera))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = 0;
+            previousLayout = "";
             onResume();
         } else if (currentLevel > 40 && currentCity.equals(getString(R.string.txt_ajim))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = 0;
+            previousLayout = "";
             onResume();
         } else if (currentLevel > 50 && currentCity.equals(getString(R.string.txt_tamanrasset))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = 0;
+            previousLayout = "";
             onResume();
         } else if (currentLevel > 60 && currentCity.equals(getString(R.string.txt_gonna_re_zhu))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = 0;
+            previousLayout = "";
             onResume();
         } else if (currentLevel > 70 && currentCity.equals(getString(R.string.txt_botswana))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = 0;
+            previousLayout = "";
             onResume();
         }
 //        else if (currentLevel > 80 && currentCity.equals(getString(R.string.txt_albufera))) {
