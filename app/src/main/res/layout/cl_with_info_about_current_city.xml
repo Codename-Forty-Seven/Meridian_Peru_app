@@ -25,7 +25,6 @@
     <ImageView
         android:id="@+id/img_current_city_marker"
         android:layout_width="0dp"
-        android:scaleType="centerCrop"
         android:layout_height="300dp"
         android:layout_marginStart="16dp"
         android:layout_margin="16dp"

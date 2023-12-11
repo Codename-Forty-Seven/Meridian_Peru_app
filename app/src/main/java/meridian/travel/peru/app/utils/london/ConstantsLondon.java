@@ -11,7 +11,7 @@ public class ConstantsLondon {
             "\n" +
             "a) Big Ben\n" +
             "b) The Tower\n" +
-            "c) The Rabbit\n" +
+            "c) The Buckingham Palace\n" +
             "d) The Statue of liberty";
     public static final String THIRD_QUESTION_LONDON = "Which organization is located in the Greenwich neighborhood?\n" +
             "\n" +
@@ -80,13 +80,4 @@ public class ConstantsLondon {
             "\n" +
             "Greenwich is an east London neighborhood known for its history and cultural significance.\n" +
             "It is home to the Royal Observatory and the Greenwich Meridian, which is used to determine geographic zero.";
-    public static final String TXT_MAIN_ALBUFERA = "El Parque natural de la Albufera, the 21,120 hectare Albufera Reserve, was declared a Natural Park of Valencia on July 23, 1986, and since 1990 it has been included in the list of wetlands for birds of international importance by the Convenio de Ramsar.\n" +
-            "\n" +
-            "This nature reserve is located about 10 km south of the city of Valencia and includes Lake Albufera and the coastal strip adjacent to the lake. It is worth mentioning that Albufera is the largest freshwater lake in Spain and is of great importance to the ecology of the region and the country. It is home to many endangered bird species, such as the Iberian Fartet and the Red Book species Samarugo." +
-            "Lake Albufera has had several names throughout its history: in Roman times it was called Nacarum Stagnum and in some examples of Moorish poetry it appears as the \"Sun Mirror\" (Espejo del sol).\n" +
-            "\n" +
-            "In 1902, the Valencian writer Vicente Blasco Ibáñez wrote the novel \"Cañas y barro\" (Reeds and mud), set in the Albufera of the early twentieth century, portraying with absolute accuracy the historical and social reality of the time and giving detailed descriptions of this unique natural reserve.\n" +
-            "\n" +
-            "Visiting this park and its adjacent lake, you can enjoy the beauty of the local nature, take a boat tour of the lake, see rare species of birds, some of which are listed in the Red Book, enjoy the taste of authentic Valencian paella, and, of course, watch the beautiful sunset, the flashes of which are reflected on the surface of Lake Albufera with millions of colored lights.";
-
 }

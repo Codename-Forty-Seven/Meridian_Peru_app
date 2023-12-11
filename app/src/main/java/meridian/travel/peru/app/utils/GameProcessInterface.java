@@ -9,7 +9,7 @@ public interface GameProcessInterface {
     void showAllOpenCities(View viewToShow);
     void showFestivalElements(View viewToShow);
     void showMainElements(View viewToShow);
-    void showPictures(View viewToShow);
+    void showPictures(View viewToShow, TextView tv_whatClick);
     void showQuizListQuestions(View viewToShow, int currentLevel);
     void showQuizListProgress(View cl_with_progress, int currentLevel);
     void showViewForStudy(View viewToShow);
@@ -17,4 +17,5 @@ public interface GameProcessInterface {
     boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel);
     void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel);
     void showSecondPlace(View cl_for_study_about_current_stop);
+    void showInfoAboutCurrentFestival(View cl_for_sharing, int currentLevel, TextView tv_what_click);
 }

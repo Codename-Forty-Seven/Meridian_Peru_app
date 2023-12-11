@@ -4,119 +4,176 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/meridian_peru" />
-
-    <TextView
-        android:id="@+id/tv_current_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/abril_fatface"
-        android:text="TextView"
-        android:layout_marginVertical="4dp"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_header" />
-
-    <LinearLayout
-        android:id="@+id/ll_with_tickets"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_with_info_about_current_festival"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="7dp"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/design_for_share"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_for_sharing_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_current_city">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_book_tickets"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_header_for_current_festival"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginVertical="4dp"
             android:fontFamily="@font/abril_fatface"
             android:gravity="center"
-            android:text="@string/txt_book_tickets"
+            android:text="TextView"
+            android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/img_btn_airbnb"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/anim_click_airbnb"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:state_pressed="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_with_hotel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="7dp"
-        android:weightSum="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_with_tickets">
+        <ImageView
+            android:id="@+id/img_current_festival"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_header_for_current_festival"
+            app:layout_constraintStart_toStartOf="@+id/tv_header_for_current_festival"
+            app:layout_constraintTop_toBottomOf="@+id/tv_header_for_current_festival"
+            app:srcCompat="@drawable/img_royal_observatory" />
 
         <TextView
-            android:id="@+id/tv_book_hotel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
+            android:id="@+id/tv_main_txt_about_current_festival"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:fontFamily="@font/abril_fatface"
             android:gravity="center"
-            android:text="@string/txt_book_hotel"
+            android:text="nrgjnerjkgnfdklsn"
             android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_current_festival" />
 
-        <ImageButton
-            android:id="@+id/img_btn_booking"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/anim_click_booking"
-            android:clickable="true"
-            android:focusable="true"
-            android:state_pressed="true" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/img_btn_share_progress"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_for_sharing_menu"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/anim_click_share"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/design_for_share"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_with_hotel" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_with_info_about_current_festival">
+
+        <TextView
+            android:id="@+id/tv_current_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:fontFamily="@font/abril_fatface"
+            android:text="TextView"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_with_tickets"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_current_city">
+
+            <TextView
+                android:id="@+id/tv_book_tickets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/abril_fatface"
+                android:gravity="center"
+                android:text="@string/txt_book_tickets"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/img_btn_airbnb"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/anim_click_airbnb"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:state_pressed="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_with_hotel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="7dp"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_with_tickets">
+
+            <TextView
+                android:id="@+id/tv_book_hotel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/abril_fatface"
+                android:gravity="center"
+                android:text="@string/txt_book_hotel"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/img_btn_booking"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/anim_click_booking"
+                android:clickable="true"
+                android:focusable="true"
+                android:state_pressed="true" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/img_btn_share_progress"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/anim_click_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_with_hotel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

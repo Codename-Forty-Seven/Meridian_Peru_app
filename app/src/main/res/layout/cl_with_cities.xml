@@ -20,13 +20,13 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_valencia"
+        app:layout_constraintBottom_toTopOf="@+id/tv_villajoyosa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_valencia"
+        android:id="@+id/tv_villajoyosa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp"
@@ -65,9 +65,9 @@
         android:textSize="18sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/tv_ajim"
-        app:layout_constraintEnd_toEndOf="@+id/tv_valencia"
-        app:layout_constraintStart_toStartOf="@+id/tv_valencia"
-        app:layout_constraintTop_toBottomOf="@+id/tv_valencia" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_villajoyosa"
+        app:layout_constraintStart_toStartOf="@+id/tv_villajoyosa"
+        app:layout_constraintTop_toBottomOf="@+id/tv_villajoyosa" />
 
     <TextView
         android:id="@+id/tv_ajim"
@@ -130,32 +130,10 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/tv_longa_market"
+        app:layout_constraintBottom_toTopOf="@+id/tv_botswana"
         app:layout_constraintEnd_toEndOf="@+id/tv_tamanrasset"
         app:layout_constraintStart_toStartOf="@+id/tv_tamanrasset"
         app:layout_constraintTop_toBottomOf="@+id/tv_tamanrasset" />
-
-    <TextView
-        android:id="@+id/tv_longa_market"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="4dp"
-        android:layout_weight="1"
-        android:background="@drawable/anim_click_text"
-        android:clickable="true"
-        android:focusable="true"
-        android:fontFamily="@font/abril_fatface"
-        android:gravity="center"
-        android:padding="7dp"
-        android:text="@string/txt_longa_market"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/tv_botswana"
-        app:layout_constraintEnd_toEndOf="@+id/tv_gonna_re_zhu"
-        app:layout_constraintStart_toStartOf="@+id/tv_gonna_re_zhu"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gonna_re_zhu" />
 
     <TextView
         android:id="@+id/tv_botswana"
@@ -171,12 +149,13 @@
         android:padding="7dp"
         android:text="@string/txt_botswana"
         android:textAllCaps="true"
+        app:layout_constraintBottom_toTopOf="@+id/tv_antarctica"
+        app:layout_constraintEnd_toEndOf="@+id/tv_gonna_re_zhu"
+        app:layout_constraintStart_toStartOf="@+id/tv_gonna_re_zhu"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gonna_re_zhu"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/tv_longa_market"
-        app:layout_constraintStart_toStartOf="@+id/tv_longa_market"
-        app:layout_constraintTop_toBottomOf="@+id/tv_longa_market" />
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/tv_antarctica"
@@ -194,10 +173,31 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tv_botswana"
         app:layout_constraintStart_toStartOf="@+id/tv_botswana"
-        app:layout_constraintTop_toBottomOf="@+id/tv_botswana" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_botswana"
+        app:layout_constraintBottom_toTopOf="@+id/tv_longa_market"
+        android:visibility="invisible" />
 
+    <TextView
+        android:id="@+id/tv_longa_market"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:layout_weight="1"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="@string/txt_longa_market"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_antarctica"
+        app:layout_constraintStart_toStartOf="@+id/tv_antarctica"
+        app:layout_constraintTop_toBottomOf="@+id/tv_antarctica"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

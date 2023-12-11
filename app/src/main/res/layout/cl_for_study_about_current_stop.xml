@@ -21,9 +21,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/img_current_city"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/img_current_place"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_header_for_study_about_current_stop"
         app:layout_constraintStart_toStartOf="@+id/tv_header_for_study_about_current_stop"
@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@+id/ll_with_control_btns_about_current_stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_current_city">
+        app:layout_constraintTop_toBottomOf="@+id/img_current_place">
 
         <TextView
             android:id="@+id/tv_main_txt_for_study_about_current_stop"
