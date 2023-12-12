@@ -46,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private CircleImageView img_current_map_element;
     private LinearLayout ll_london_progress, ll_villajoyosa_progress, ll_albufera_progress, ll_ajim_progress,
-            ll_tamanrasset_progress, ll_gonna_re_zhu_progress, ll_longa_market_progress, ll_botswana_progress, ll_antarctica_progress;
+            ll_tamanrasset_progress, ll_gonna_re_zhu_progress, ll_longa_market_progress, ll_botswana_progress, ll_antarctica_progress, ll_first_question,
+            ll_second_question, ll_third_question, ll_forth_question, ll_fifth_question, ll_sixth_question, ll_seventh_question, ll_eighth_question, ll_ninth_question, ll_tenth_question;
     private ConstraintLayout cl_for_sharing, cl_main_page, cl_for_study_about_current_stop,
             cl_with_quiz_question, cl_with_quiz_questions_list, cl_with_cities, cl_with_festival,
             cl_with_photos, cl_with_progress, cl_with_info_about_current_city;
-    private ImageView img_map_marker, img_current_festival;
+    private ImageView img_map_marker, img_current_festival, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9, img_10;
     private ImageButton img_btn_airbnb, img_btn_booking, img_btn_share_progress, img_share_main_1, img_share_main_2, img_share_main_3,
             img_share_main_4, img_share_main_5;
     private int currentLevel = 0, currentMenuItem = 0;
@@ -103,8 +104,35 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
+        tv_villajoyosa_progress.setOnClickListener(v -> {
+            if (!ll_villajoyosa_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
+        ll_albufera_progress.setOnClickListener(v -> {
+            if (!ll_albufera_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
         tv_albufera_progress.setOnClickListener(v -> {
             if (!ll_albufera_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
+        ll_ajim_progress.setOnClickListener(v -> {
+            if (!ll_ajim_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -130,7 +158,25 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
+        tv_tamanrasset_progress.setOnClickListener(v -> {
+            if (!ll_tamanrasset_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
         tv_gonna_re_zhu_progress.setOnClickListener(v -> {
+            if (!ll_gonna_re_zhu_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
+        ll_gonna_re_zhu_progress.setOnClickListener(v -> {
             if (!ll_gonna_re_zhu_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
@@ -148,6 +194,15 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
+        tv_longa_market_progress.setOnClickListener(v -> {
+            if (!ll_longa_market_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
         ll_botswana_progress.setOnClickListener(v -> {
             if (!ll_botswana_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
@@ -157,7 +212,25 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
+        tv_botswana_progress.setOnClickListener(v -> {
+            if (!ll_botswana_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
         tv_antarctica_progress.setOnClickListener(v -> {
+            if (!ll_antarctica_progress.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_progress";
+            hideAllComponents();
+            mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
+        });
+        ll_antarctica_progress.setOnClickListener(v -> {
             if (!ll_antarctica_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
@@ -176,7 +249,25 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
         });
+        ll_first_question.setOnClickListener(v -> {
+            if (!tv_quiz_question_1.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
         tv_quiz_question_2.setOnClickListener(v -> {
+            if (!tv_quiz_question_2.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
+        ll_second_question.setOnClickListener(v -> {
             if (!tv_quiz_question_2.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
@@ -194,7 +285,25 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
         });
+        ll_third_question.setOnClickListener(v -> {
+            if (!tv_quiz_question_3.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
         tv_quiz_question_4.setOnClickListener(v -> {
+            if (!tv_quiz_question_4.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
+        ll_forth_question.setOnClickListener(v -> {
             if (!tv_quiz_question_4.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
@@ -212,7 +321,25 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
         });
+        ll_fifth_question.setOnClickListener(v -> {
+            if (!tv_quiz_question_5.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
         tv_quiz_question_6.setOnClickListener(v -> {
+            if (!tv_quiz_question_6.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
+        ll_sixth_question.setOnClickListener(v -> {
             if (!tv_quiz_question_6.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
@@ -230,7 +357,25 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
         });
+        ll_seventh_question.setOnClickListener(v -> {
+            if (!tv_quiz_question_7.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
         tv_quiz_question_8.setOnClickListener(v -> {
+            if (!tv_quiz_question_8.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
+        ll_eighth_question.setOnClickListener(v -> {
             if (!tv_quiz_question_8.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
@@ -248,7 +393,25 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
         });
+        ll_ninth_question.setOnClickListener(v -> {
+            if (!tv_quiz_question_9.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
         tv_quiz_question_10.setOnClickListener(v -> {
+            if (!tv_quiz_question_10.isEnabled()) {
+                Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            previousLayout = "cl_with_quiz_questions_list";
+            hideAllComponents();
+            mainGameUtils.showQuestionOnView(cl_with_quiz_question, currentLevel);
+        });
+        ll_tenth_question.setOnClickListener(v -> {
             if (!tv_quiz_question_10.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
@@ -327,7 +490,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         img_share_main_1.setOnClickListener(v -> {
-
+            currentMenuItem = menu_healthicons_travel;
             ImageView img_main_1 = findViewById(R.id.img_main_1);
             Uri imageUri = mainGameUtils.getResourceUri(img_main_1);
 
@@ -337,6 +500,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_2.setOnClickListener(v -> {
+            currentMenuItem = menu_healthicons_travel;
             ImageView img_main_2 = findViewById(R.id.img_main_2);
             Uri imageUri = mainGameUtils.getResourceUri(img_main_2);
 
@@ -346,6 +510,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_3.setOnClickListener(v -> {
+            currentMenuItem = menu_healthicons_travel;
             ImageView img_main_3 = findViewById(R.id.img_main_3);
             Uri imageUri = mainGameUtils.getResourceUri(img_main_3);
 
@@ -355,6 +520,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_4.setOnClickListener(v -> {
+            currentMenuItem = menu_healthicons_travel;
             ImageView img_main_4 = findViewById(R.id.img_main_4);
             Uri imageUri = mainGameUtils.getResourceUri(img_main_4);
 
@@ -364,6 +530,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(shareIntent, "Share image using"));
         });
         img_share_main_5.setOnClickListener(v -> {
+            currentMenuItem = menu_healthicons_travel;
             ImageView img_main_5 = findViewById(R.id.img_main_5);
             Uri imageUri = mainGameUtils.getResourceUri(img_main_5);
 
@@ -617,6 +784,7 @@ public class MainActivity extends AppCompatActivity {
         currentCity = mainGameUtils.initGameProcessInterface(MainActivity.this, currentLevel);
         Log.d(TAG, "onResume: currentCity: " + currentCity);
         Log.d(TAG, "onResume: currentLevel: " + currentLevel);
+        Log.d(TAG, "onResume: firstStart: " + firstStart);
         if (currentLevel > 80) {
             currentLevel = 1;
             addCountProgress(currentLevel);
@@ -627,6 +795,7 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.showMainElements(cl_main_page, img_map_marker);
             firstStart = false;
         }
+        returnBack(previousLayout);
         setMenuInCorrectPosition(currentMenuItem);
     }
 
@@ -664,7 +833,17 @@ public class MainActivity extends AppCompatActivity {
         img_map_marker = findViewById(R.id.img_map_marker);
         img_current_map_element = findViewById(R.id.img_current_map_element);
         img_current_festival = findViewById(R.id.img_current_festival);
-        //textViews
+        img_1 = findViewById(R.id.img_quiz_question_1);
+        img_2 = findViewById(R.id.img_quiz_question_2);
+        img_3 = findViewById(R.id.img_quiz_question_3);
+        img_4 = findViewById(R.id.img_quiz_question_4);
+        img_5 = findViewById(R.id.img_quiz_question_5);
+        img_6 = findViewById(R.id.img_quiz_question_6);
+        img_7 = findViewById(R.id.img_quiz_question_7);
+        img_8 = findViewById(R.id.img_quiz_question_8);
+        img_9 = findViewById(R.id.img_quiz_question_9);
+        img_10 = findViewById(R.id.img_quiz_question_10);
+//textViews
         tv_current_city = findViewById(R.id.tv_current_city);
         tv_with_festival_london = findViewById(R.id.tv_with_festival_london);
         tv_with_festival_villajoyosa = findViewById(R.id.tv_with_festival_villajoyosa);
@@ -740,6 +919,16 @@ public class MainActivity extends AppCompatActivity {
         ll_longa_market_progress = findViewById(R.id.ll_longa_market_progress);
         ll_botswana_progress = findViewById(R.id.ll_botswana_progress);
         ll_antarctica_progress = findViewById(R.id.ll_antarctica_progress);
+        ll_first_question = findViewById(R.id.ll_first_question);
+        ll_second_question = findViewById(R.id.ll_second_question);
+        ll_third_question = findViewById(R.id.ll_third_question);
+        ll_forth_question = findViewById(R.id.ll_forth_question);
+        ll_fifth_question = findViewById(R.id.ll_fifth_question);
+        ll_sixth_question = findViewById(R.id.ll_sixth_question);
+        ll_seventh_question = findViewById(R.id.ll_seventh_question);
+        ll_eighth_question = findViewById(R.id.ll_eighth_question);
+        ll_ninth_question = findViewById(R.id.ll_ninth_question);
+        ll_tenth_question = findViewById(R.id.ll_tenth_question);
     }
 
     private void checkPolicy() {
@@ -850,37 +1039,37 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "checkCurrentLevel: currentLevel: " + currentLevel);
         if (currentLevel > 10 && currentCity.equals(getString(R.string.txt_london))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
         } else if (currentLevel > 20 && currentCity.equals(getString(R.string.txt_villajoyosa))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
         } else if (currentLevel > 30 && currentCity.equals(getString(R.string.txt_albufera))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
         } else if (currentLevel > 40 && currentCity.equals(getString(R.string.txt_ajim))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
         } else if (currentLevel > 50 && currentCity.equals(getString(R.string.txt_tamanrasset))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
         } else if (currentLevel > 60 && currentCity.equals(getString(R.string.txt_gonna_re_zhu))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
         } else if (currentLevel > 70 && currentCity.equals(getString(R.string.txt_botswana))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
         }
@@ -891,7 +1080,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
         else if (currentLevel > 80 && currentCity.equals(getString(R.string.txt_antarctica))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = 0;
+            currentMenuItem = menu_learn;
             onResume();
         }
         Log.d(TAG, "checkCurrentLevel: currentCity: " + currentCity);
@@ -959,18 +1148,5 @@ public class MainActivity extends AppCompatActivity {
                 listener.onRequestComplete(result);
             }
         }
-    }
-
-    private Uri getResourceUri(ImageView imageView) {
-        // Отримуємо ID ресурсу поточного зображення
-        imageView.setTag(imageView.getResources());
-        int resourceId = (Integer) imageView.getTag();
-
-        // Отримуємо URI з ресурсу
-        Resources res = getResources();
-        return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE +
-                "://" + res.getResourcePackageName(resourceId)
-                + '/' + res.getResourceTypeName(resourceId)
-                + '/' + res.getResourceEntryName(resourceId));
     }
 }

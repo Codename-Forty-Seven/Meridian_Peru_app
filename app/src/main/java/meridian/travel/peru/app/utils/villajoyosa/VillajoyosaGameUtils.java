@@ -576,6 +576,7 @@ public class VillajoyosaGameUtils implements GameProcessInterface {
     public void showViewForStudy(View viewToShow) {
         TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
         TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
+        activity.findViewById(R.id.tv_next_place_for_study_about_current_stop).setVisibility(View.GONE);
         tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_villajoyosa));
         tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_VILLAJOYOSA);
         animToShowViews(viewToShow);
