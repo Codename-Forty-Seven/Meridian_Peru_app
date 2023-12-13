@@ -32,7 +32,7 @@ public class OfflinePolicyActivity extends AppCompatActivity {
                 txt_v_continue_policy.setBackgroundResource(R.drawable.anim_txt_press_enable);
             } else {
                 txt_v_continue_policy.setEnabled(false);
-                txt_v_continue_policy.setBackgroundResource(R.drawable.anim_txt_press_disable);
+                txt_v_continue_policy.setBackgroundResource(R.drawable.anim_click_text);
             }
         });
         txt_v_continue_policy.setOnClickListener(v -> {
@@ -58,5 +58,10 @@ public class OfflinePolicyActivity extends AppCompatActivity {
     private void addPolicy() {
         editor.putBoolean(KEY_PRIVACY_AGREE, true);
         editor.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, R.string.explain_policy_txt, Toast.LENGTH_LONG).show();
     }
 }

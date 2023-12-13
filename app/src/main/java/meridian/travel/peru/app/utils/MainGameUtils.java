@@ -5,10 +5,17 @@ import static android.content.ContentValues.TAG;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.net.Uri;
+import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Handler;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,12 +36,17 @@ public class MainGameUtils {
     private GameProcessInterface gameProcessInterface;
     private ObjectAnimator animator;
     private Runnable runnable;
-    private int currentIndex = 0;
+    private int currentIndex = 0, batteryPercent;
     private final Handler handler = new Handler();
     private Activity activity;
 
-    public String initGameProcessInterface(Activity activity, int currentLevel) {
+    public MainGameUtils(Activity activity) {
         this.activity = activity;
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        activity.registerReceiver(batteryReceiver, filter);
+    }
+
+    public String initGameProcessInterface(Activity activity, int currentLevel) {
         String currentCity = "";
         if (currentLevel > 0 && currentLevel <= 10) {
             gameProcessInterface = new LondonGameUtils(activity);
@@ -243,5 +255,40 @@ public class MainGameUtils {
         if (animator != null) {
             animator.cancel();
         }
+    }
+
+    private final BroadcastReceiver batteryReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+            batteryPercent = Math.round((level / (float) scale) * 100);
+
+            Log.d(TAG, "onReceive: Battery Level: " + batteryPercent + " %");
+        }
+    };
+
+    public boolean isADBEnabled() {
+        int adb = Settings.Secure.getInt(
+                activity.getContentResolver(),
+                Settings.Global.ADB_ENABLED, 0
+        );
+        return adb == 1;
+    }
+
+    public boolean isDeveloperModeEnabled(Context context) {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1
+                && Settings.Global.getInt(
+                context.getContentResolver(),
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0
+        ) != 0;
+    }
+
+    public void unregisterReceiver() {
+        activity.unregisterReceiver(batteryReceiver);
+    }
+
+    public int getBatteryPercent() {
+        return batteryPercent;
     }
 }

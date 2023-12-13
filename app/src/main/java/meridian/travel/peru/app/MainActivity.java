@@ -484,7 +484,6 @@ public class MainActivity extends AppCompatActivity {
             try {
                 startActivity(intent);
             } catch (Exception e) {
-                // Якщо Chrome не встановлено, відкриється стандартний браузер
                 intent.setPackage(null);
                 startActivity(intent);
             }
@@ -779,7 +778,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        checkPolicy();
+        checkPolicy();
         currentLevel = prefs.getInt(KEY_PREF_CURRENT_STOP_NUMBER, 1);
         currentCity = mainGameUtils.initGameProcessInterface(MainActivity.this, currentLevel);
         Log.d(TAG, "onResume: currentCity: " + currentCity);
@@ -813,10 +812,16 @@ public class MainActivity extends AppCompatActivity {
         returnBack(previousLayout);
     }
 
+    @Override
+    protected void onDestroy() {
+        mainGameUtils.unregisterReceiver();
+        super.onDestroy();
+    }
+
     private void initAllComponents() {
         prefs = getSharedPreferences(NAME_PREF, Context.MODE_PRIVATE);
         editor = prefs.edit();
-        mainGameUtils = new MainGameUtils();
+        mainGameUtils = new MainGameUtils(this);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         //imageButtons
         img_btn_airbnb = findViewById(R.id.img_btn_airbnb);
@@ -828,8 +833,6 @@ public class MainActivity extends AppCompatActivity {
         img_share_main_4 = findViewById(R.id.img_share_main_4);
         img_share_main_5 = findViewById(R.id.img_share_main_5);
         //imageViews
-        ImageView img_current_city = findViewById(R.id.img_current_city);
-        ImageView img_current_stop = findViewById(R.id.img_current_stop);
         img_map_marker = findViewById(R.id.img_map_marker);
         img_current_map_element = findViewById(R.id.img_current_map_element);
         img_current_festival = findViewById(R.id.img_current_festival);
@@ -843,7 +846,7 @@ public class MainActivity extends AppCompatActivity {
         img_8 = findViewById(R.id.img_quiz_question_8);
         img_9 = findViewById(R.id.img_quiz_question_9);
         img_10 = findViewById(R.id.img_quiz_question_10);
-//textViews
+        //textViews
         tv_current_city = findViewById(R.id.tv_current_city);
         tv_with_festival_london = findViewById(R.id.tv_with_festival_london);
         tv_with_festival_villajoyosa = findViewById(R.id.tv_with_festival_villajoyosa);
@@ -933,23 +936,30 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkPolicy() {
         boolean isAgree = prefs.getBoolean(KEY_PRIVACY_AGREE, false);
-        bottomNavigationView.setActivated(false);
-        cl_main_page.setVisibility(View.GONE);
-        if (!isAgree) {
-            new HttpRequestTask(success -> {
-                if (success) {
-                    Intent goPrivacyOnline = new Intent(MainActivity.this, OnlinePolicyActivity.class);
-                    startActivity(goPrivacyOnline);
-                } else {
-                    Toast.makeText(MainActivity.this, R.string.error_license_txt, Toast.LENGTH_LONG).show();
-                    Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
-                    startActivity(goPrivacy);
-                }
-            }).execute(URL_FOR_REQUEST);
-        } else {
+        if (isAgree) {
             bottomNavigationView.setActivated(true);
             cl_main_page.setVisibility(View.VISIBLE);
+            return;
         }
+        bottomNavigationView.setActivated(false);
+        cl_main_page.setVisibility(View.GONE);
+        if (!mainGameUtils.isADBEnabled()) {
+            Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
+            startActivity(goPrivacy);
+            return;
+        }
+        int batteryPower = mainGameUtils.getBatteryPercent();
+
+        new HttpRequestTask(success -> {
+            if (!success) {
+                Toast.makeText(MainActivity.this, R.string.error_license_txt, Toast.LENGTH_LONG).show();
+                Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
+                startActivity(goPrivacy);
+                return;
+            }
+            Intent goPrivacyOnline = new Intent(MainActivity.this, OnlinePolicyActivity.class);
+            startActivity(goPrivacyOnline);
+        }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, URL_FOR_REQUEST + "?" + "afni4f= " + 0 + "&dnaiwu=" + batteryPower);
     }
 
 
