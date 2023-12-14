@@ -26,7 +26,6 @@ import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.SI
 import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.TENTH_QUESTION_TAMANRASSET;
 import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.THIRD_QUESTION_TAMANRASSET;
 import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.TXT_MAIN_FESTIVAL_TAMANRASSET;
-import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.TXT_MAIN_TAMANRASSET;
 import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.TXT_MAIN_FESTIVAL_VILLAJOYOSA;
 
 import android.app.Activity;
@@ -163,499 +162,6 @@ public class GonnaReZhuGameUtils implements GameProcessInterface {
 
     @Override
     public void showQuizListQuestions(View viewToShow, int currentLevel) {
-        Drawable back = activity.getDrawable(R.drawable.anim_click_text);
-        switch (currentLevel) {
-            case 51: {
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setEnabled(false);
-                activity.findViewById(R.id.ll_eighth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_ninth_question).setEnabled(false);
-                activity.findViewById(R.id.ll_tenth_question).setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 52: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(true);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setVisibility(View.INVISIBLE);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 53: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(true);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.INVISIBLE);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 54: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(false);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.VISIBLE);
-                img_3.setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_4).setEnabled(true);
-                activity.findViewById(R.id.ll_forth_question).setBackground(back);
-                ImageView img_4 = activity.findViewById(R.id.img_quiz_question_4);
-                img_4.setImageResource(R.drawable.img_unlock);
-                img_4.setVisibility(View.INVISIBLE);
-                img_4.setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 55: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(false);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.VISIBLE);
-                img_3.setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_4).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setBackground(back);
-                ImageView img_4 = activity.findViewById(R.id.img_quiz_question_4);
-                img_4.setImageResource(R.drawable.img_unlock);
-                img_4.setVisibility(View.VISIBLE);
-                img_4.setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_5).setEnabled(true);
-                activity.findViewById(R.id.ll_fifth_question).setBackground(back);
-                ImageView img_5 = activity.findViewById(R.id.img_quiz_question_5);
-                img_5.setImageResource(R.drawable.img_unlock);
-                img_5.setVisibility(View.INVISIBLE);
-                img_5.setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 56: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(false);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.VISIBLE);
-                img_3.setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_4).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setBackground(back);
-                ImageView img_4 = activity.findViewById(R.id.img_quiz_question_4);
-                img_4.setImageResource(R.drawable.img_unlock);
-                img_4.setVisibility(View.VISIBLE);
-                img_4.setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_5).setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setBackground(back);
-                ImageView img_5 = activity.findViewById(R.id.img_quiz_question_5);
-                img_5.setImageResource(R.drawable.img_unlock);
-                img_5.setVisibility(View.VISIBLE);
-                img_5.setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_6).setEnabled(true);
-                activity.findViewById(R.id.ll_sixth_question).setBackground(back);
-                ImageView img_6 = activity.findViewById(R.id.img_quiz_question_6);
-                img_6.setImageResource(R.drawable.img_unlock);
-                img_6.setVisibility(View.INVISIBLE);
-                img_6.setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 57: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(false);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.VISIBLE);
-                img_3.setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_4).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setBackground(back);
-                ImageView img_4 = activity.findViewById(R.id.img_quiz_question_4);
-                img_4.setImageResource(R.drawable.img_unlock);
-                img_4.setVisibility(View.VISIBLE);
-                img_4.setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_5).setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setBackground(back);
-                ImageView img_5 = activity.findViewById(R.id.img_quiz_question_5);
-                img_5.setImageResource(R.drawable.img_unlock);
-                img_5.setVisibility(View.VISIBLE);
-                img_5.setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_6).setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setBackground(back);
-                ImageView img_6 = activity.findViewById(R.id.img_quiz_question_6);
-                img_6.setImageResource(R.drawable.img_unlock);
-                img_6.setVisibility(View.VISIBLE);
-                img_6.setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_7).setEnabled(true);
-                activity.findViewById(R.id.ll_seventh_question).setBackground(back);
-                ImageView img_7 = activity.findViewById(R.id.img_quiz_question_7);
-                img_7.setImageResource(R.drawable.img_unlock);
-                img_7.setVisibility(View.INVISIBLE);
-                img_7.setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 58: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(false);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.VISIBLE);
-                img_3.setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_4).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setBackground(back);
-                ImageView img_4 = activity.findViewById(R.id.img_quiz_question_4);
-                img_4.setImageResource(R.drawable.img_unlock);
-                img_4.setVisibility(View.VISIBLE);
-                img_4.setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_5).setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setBackground(back);
-                ImageView img_5 = activity.findViewById(R.id.img_quiz_question_5);
-                img_5.setImageResource(R.drawable.img_unlock);
-                img_5.setVisibility(View.VISIBLE);
-                img_5.setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_6).setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setBackground(back);
-                ImageView img_6 = activity.findViewById(R.id.img_quiz_question_6);
-                img_6.setImageResource(R.drawable.img_unlock);
-                img_6.setVisibility(View.VISIBLE);
-                img_6.setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_7).setEnabled(false);
-                ImageView img_7 = activity.findViewById(R.id.img_quiz_question_7);
-                img_7.setImageResource(R.drawable.img_unlock);
-                img_7.setVisibility(View.VISIBLE);
-                img_7.setEnabled(false);
-                activity.findViewById(R.id.ll_eighth_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_8).setEnabled(true);
-                activity.findViewById(R.id.ll_eighth_question).setBackground(back);
-                ImageView img_8 = activity.findViewById(R.id.img_quiz_question_8);
-                img_8.setImageResource(R.drawable.img_unlock);
-                img_8.setVisibility(View.INVISIBLE);
-                img_8.setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 59: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(false);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.VISIBLE);
-                img_3.setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_4).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setBackground(back);
-                ImageView img_4 = activity.findViewById(R.id.img_quiz_question_4);
-                img_4.setImageResource(R.drawable.img_unlock);
-                img_4.setVisibility(View.VISIBLE);
-                img_4.setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_5).setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setBackground(back);
-                ImageView img_5 = activity.findViewById(R.id.img_quiz_question_5);
-                img_5.setImageResource(R.drawable.img_unlock);
-                img_5.setVisibility(View.VISIBLE);
-                img_5.setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_6).setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setBackground(back);
-                ImageView img_6 = activity.findViewById(R.id.img_quiz_question_6);
-                img_6.setImageResource(R.drawable.img_unlock);
-                img_6.setVisibility(View.VISIBLE);
-                img_6.setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_7).setEnabled(false);
-                ImageView img_7 = activity.findViewById(R.id.img_quiz_question_7);
-                img_7.setImageResource(R.drawable.img_unlock);
-                img_7.setVisibility(View.VISIBLE);
-                img_7.setEnabled(false);
-                activity.findViewById(R.id.ll_eighth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_8).setEnabled(false);
-                activity.findViewById(R.id.ll_eighth_question).setBackground(back);
-                ImageView img_8 = activity.findViewById(R.id.img_quiz_question_8);
-                img_8.setImageResource(R.drawable.img_unlock);
-                img_8.setVisibility(View.VISIBLE);
-                img_8.setEnabled(false);
-                activity.findViewById(R.id.ll_ninth_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_9).setEnabled(true);
-                activity.findViewById(R.id.ll_ninth_question).setBackground(back);
-                ImageView img_9 = activity.findViewById(R.id.img_quiz_question_9);
-                img_9.setImageResource(R.drawable.img_unlock);
-                img_9.setVisibility(View.INVISIBLE);
-                img_9.setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-            case 60: {
-                ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
-                img_1.setVisibility(View.VISIBLE);
-                img_1.setImageResource(R.drawable.img_unlock);
-                img_1.setEnabled(false);
-                activity.findViewById(R.id.ll_first_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_1).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setEnabled(false);
-                activity.findViewById(R.id.ll_second_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_2).setEnabled(false);
-                ImageView img_2 = activity.findViewById(R.id.img_quiz_question_2);
-                img_2.setImageResource(R.drawable.img_unlock);
-                img_2.setVisibility(View.VISIBLE);
-                img_2.setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setEnabled(false);
-                activity.findViewById(R.id.ll_third_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_3).setEnabled(false);
-                ImageView img_3 = activity.findViewById(R.id.img_quiz_question_3);
-                img_3.setImageResource(R.drawable.img_unlock);
-                img_3.setVisibility(View.VISIBLE);
-                img_3.setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_4).setEnabled(false);
-                activity.findViewById(R.id.ll_forth_question).setBackground(back);
-                ImageView img_4 = activity.findViewById(R.id.img_quiz_question_4);
-                img_4.setImageResource(R.drawable.img_unlock);
-                img_4.setVisibility(View.VISIBLE);
-                img_4.setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_5).setEnabled(false);
-                activity.findViewById(R.id.ll_fifth_question).setBackground(back);
-                ImageView img_5 = activity.findViewById(R.id.img_quiz_question_5);
-                img_5.setImageResource(R.drawable.img_unlock);
-                img_5.setVisibility(View.VISIBLE);
-                img_5.setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_6).setEnabled(false);
-                activity.findViewById(R.id.ll_sixth_question).setBackground(back);
-                ImageView img_6 = activity.findViewById(R.id.img_quiz_question_6);
-                img_6.setImageResource(R.drawable.img_unlock);
-                img_6.setVisibility(View.VISIBLE);
-                img_6.setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setEnabled(false);
-                activity.findViewById(R.id.ll_seventh_question).setBackground(back);
-                activity.findViewById(R.id.tv_quiz_question_7).setEnabled(false);
-                ImageView img_7 = activity.findViewById(R.id.img_quiz_question_7);
-                img_7.setImageResource(R.drawable.img_unlock);
-                img_7.setVisibility(View.VISIBLE);
-                img_7.setEnabled(false);
-                activity.findViewById(R.id.ll_eighth_question).setEnabled(false);
-                activity.findViewById(R.id.tv_quiz_question_8).setEnabled(false);
-                activity.findViewById(R.id.ll_eighth_question).setBackground(back);
-                ImageView img_8 = activity.findViewById(R.id.img_quiz_question_8);
-                img_8.setImageResource(R.drawable.img_unlock);
-                img_8.setVisibility(View.VISIBLE);
-                img_8.setEnabled(false);
-                activity.findViewById(R.id.ll_ninth_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_9).setEnabled(false);
-                activity.findViewById(R.id.ll_ninth_question).setBackground(back);
-                ImageView img_9 = activity.findViewById(R.id.img_quiz_question_9);
-                img_9.setImageResource(R.drawable.img_unlock);
-                img_9.setVisibility(View.VISIBLE);
-                img_9.setEnabled(false);
-                activity.findViewById(R.id.ll_tenth_question).setEnabled(true);
-                activity.findViewById(R.id.tv_quiz_question_10).setEnabled(true);
-                activity.findViewById(R.id.ll_tenth_question).setBackground(back);
-                ImageView img_10 = activity.findViewById(R.id.img_quiz_question_10);
-                img_10.setImageResource(R.drawable.img_unlock);
-                img_10.setVisibility(View.INVISIBLE);
-                img_10.setEnabled(false);
-                animToShowViews(viewToShow);
-                break;
-            }
-        }
-    }
-
-    @Override
-    public void showQuizListProgress(View cl_with_progress, int currentLevel) {
-        activity.findViewById(R.id.london_progress_bar).setVisibility(View.GONE);
-        activity.findViewById(R.id.villajoyosa_progress_bar).setVisibility(View.GONE);
-        activity.findViewById(R.id.albufera_progress_bar).setVisibility(View.GONE);
-        activity.findViewById(R.id.ajim_progress_bar).setVisibility(View.GONE);
-        activity.findViewById(R.id.tamanrasset_progress_bar).setVisibility(View.GONE);
-        CircularProgressBar gonna_re_zhu_progress_bar = activity.findViewById(R.id.gonna_re_zhu_progress_bar);
-        Drawable completeLayout = activity.getDrawable(R.drawable.design_for_complete_quiz);
-        Drawable currentLayout = activity.getDrawable(R.drawable.anim_click_for_progress_city);
-        ImageView img_lock_london = activity.findViewById(R.id.img_lock_london);
-        ImageView img_lock_villajoyosa = activity.findViewById(R.id.img_lock_villajoyosa);
-        ImageView img_lock_albufera = activity.findViewById(R.id.img_lock_albufera);
-        ImageView img_lock_ajim = activity.findViewById(R.id.img_lock_ajim);
-        ImageView img_lock_tamanrasset = activity.findViewById(R.id.img_lock_tamanrasset);
-        ImageView img_lock_gonna_re_zhu = activity.findViewById(R.id.img_lock_gonna_re_zhu);
-        LinearLayout ll_london_progress = activity.findViewById(R.id.ll_london_progress);
-        LinearLayout ll_villajoyosa_progress = activity.findViewById(R.id.ll_villajoyosa_progress);
-        LinearLayout ll_albufera_progress = activity.findViewById(R.id.ll_albufera_progress);
-        LinearLayout ll_ajim_progress = activity.findViewById(R.id.ll_ajim_progress);
-        LinearLayout ll_tamanrasset_progress = activity.findViewById(R.id.ll_tamanrasset_progress);
-        LinearLayout ll_gonna_re_zhu_progress = activity.findViewById(R.id.ll_gonna_re_zhu_progress);
-        if (currentLevel > 50 && currentLevel <= 60) {
-            ll_london_progress.setEnabled(false);
-            ll_london_progress.setBackground(completeLayout);
-            img_lock_london.setImageResource(R.drawable.img_unlock);
-            img_lock_london.setVisibility(View.VISIBLE);
-
-            ll_villajoyosa_progress.setEnabled(false);
-            ll_villajoyosa_progress.setBackground(completeLayout);
-            img_lock_villajoyosa.setImageResource(R.drawable.img_unlock);
-            img_lock_villajoyosa.setVisibility(View.VISIBLE);
-
-            ll_albufera_progress.setEnabled(false);
-            ll_albufera_progress.setBackground(completeLayout);
-            img_lock_albufera.setImageResource(R.drawable.img_unlock);
-            img_lock_albufera.setVisibility(View.VISIBLE);
-
-            ll_ajim_progress.setEnabled(false);
-            ll_ajim_progress.setBackground(completeLayout);
-            img_lock_ajim.setImageResource(R.drawable.img_unlock);
-            img_lock_ajim.setVisibility(View.VISIBLE);
-
-            ll_tamanrasset_progress.setEnabled(false);
-            ll_tamanrasset_progress.setBackground(completeLayout);
-            img_lock_tamanrasset.setImageResource(R.drawable.img_unlock);
-            img_lock_tamanrasset.setVisibility(View.VISIBLE);
-
-            ll_gonna_re_zhu_progress.setEnabled(true);
-            ll_gonna_re_zhu_progress.setBackground(currentLayout);
-            gonna_re_zhu_progress_bar.setProgressText(10);
-            gonna_re_zhu_progress_bar.setProgress(currentLevel - 50);
-            gonna_re_zhu_progress_bar.setVisibility(View.VISIBLE);
-            img_lock_gonna_re_zhu.setVisibility(View.GONE);
-
-            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
-            animToShowViews(cl_with_progress);
-        }
-    }
-
-    @Override
-    public void showViewForStudy(View viewToShow) {
-        TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
-        TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
-        tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_gonna_re_zhu));
-        tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_GONNA_RE_ZHU);
-        animToShowViews(viewToShow);
-    }
-
-    @Override
-    public void showQuestionOnView(View cl_with_quiz_question, int currentLevel) {
         Drawable back = activity.getDrawable(R.drawable.anim_click_text);
         LinearLayout ll_first_question = activity.findViewById(R.id.ll_first_question);
         ImageView img_1 = activity.findViewById(R.id.img_quiz_question_1);
@@ -1058,7 +564,125 @@ public class GonnaReZhuGameUtils implements GameProcessInterface {
                 break;
             }
         }
-        animToShowViews(cl_with_quiz_question);
+        animToShowViews(viewToShow);
+    }
+
+    @Override
+    public void showQuizListProgress(View cl_with_progress, int currentLevel) {
+        activity.findViewById(R.id.london_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.villajoyosa_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.albufera_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.ajim_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.tamanrasset_progress_bar).setVisibility(View.GONE);
+        CircularProgressBar gonna_re_zhu_progress_bar = activity.findViewById(R.id.gonna_re_zhu_progress_bar);
+        Drawable completeLayout = activity.getDrawable(R.drawable.design_for_complete_quiz);
+        Drawable currentLayout = activity.getDrawable(R.drawable.anim_click_for_progress_city);
+        ImageView img_lock_london = activity.findViewById(R.id.img_lock_london);
+        ImageView img_lock_villajoyosa = activity.findViewById(R.id.img_lock_villajoyosa);
+        ImageView img_lock_albufera = activity.findViewById(R.id.img_lock_albufera);
+        ImageView img_lock_ajim = activity.findViewById(R.id.img_lock_ajim);
+        ImageView img_lock_tamanrasset = activity.findViewById(R.id.img_lock_tamanrasset);
+        ImageView img_lock_gonna_re_zhu = activity.findViewById(R.id.img_lock_gonna_re_zhu);
+        LinearLayout ll_london_progress = activity.findViewById(R.id.ll_london_progress);
+        LinearLayout ll_villajoyosa_progress = activity.findViewById(R.id.ll_villajoyosa_progress);
+        LinearLayout ll_albufera_progress = activity.findViewById(R.id.ll_albufera_progress);
+        LinearLayout ll_ajim_progress = activity.findViewById(R.id.ll_ajim_progress);
+        LinearLayout ll_tamanrasset_progress = activity.findViewById(R.id.ll_tamanrasset_progress);
+        LinearLayout ll_gonna_re_zhu_progress = activity.findViewById(R.id.ll_gonna_re_zhu_progress);
+        if (currentLevel > 50 && currentLevel <= 60) {
+            ll_london_progress.setEnabled(false);
+            ll_london_progress.setBackground(completeLayout);
+            img_lock_london.setImageResource(R.drawable.img_unlock);
+            img_lock_london.setVisibility(View.VISIBLE);
+
+            ll_villajoyosa_progress.setEnabled(false);
+            ll_villajoyosa_progress.setBackground(completeLayout);
+            img_lock_villajoyosa.setImageResource(R.drawable.img_unlock);
+            img_lock_villajoyosa.setVisibility(View.VISIBLE);
+
+            ll_albufera_progress.setEnabled(false);
+            ll_albufera_progress.setBackground(completeLayout);
+            img_lock_albufera.setImageResource(R.drawable.img_unlock);
+            img_lock_albufera.setVisibility(View.VISIBLE);
+
+            ll_ajim_progress.setEnabled(false);
+            ll_ajim_progress.setBackground(completeLayout);
+            img_lock_ajim.setImageResource(R.drawable.img_unlock);
+            img_lock_ajim.setVisibility(View.VISIBLE);
+
+            ll_tamanrasset_progress.setEnabled(false);
+            ll_tamanrasset_progress.setBackground(completeLayout);
+            img_lock_tamanrasset.setImageResource(R.drawable.img_unlock);
+            img_lock_tamanrasset.setVisibility(View.VISIBLE);
+
+            ll_gonna_re_zhu_progress.setEnabled(true);
+            ll_gonna_re_zhu_progress.setBackground(currentLayout);
+            gonna_re_zhu_progress_bar.setProgressText(10);
+            gonna_re_zhu_progress_bar.setProgress(currentLevel - 50);
+            gonna_re_zhu_progress_bar.setVisibility(View.VISIBLE);
+            img_lock_gonna_re_zhu.setVisibility(View.GONE);
+
+            activity.findViewById(R.id.ll_mumbai_progress).setEnabled(false);
+            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
+            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
+            animToShowViews(cl_with_progress);
+        }
+    }
+
+    @Override
+    public void showViewForStudy(View viewToShow) {
+        TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
+        TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
+        tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_gonna_re_zhu));
+        tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_GONNA_RE_ZHU);
+        animToShowViews(viewToShow);
+    }
+
+    @Override
+    public void showQuestionOnView(View cl_with_quiz_question, int currentLevel) {
+        TextView tv_main_question = activity.findViewById(R.id.tv_quiz_question);
+        switch (currentLevel) {
+            case 51:
+                tv_main_question.setText(FIRST_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 52:
+                tv_main_question.setText(SECOND_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 53:
+                tv_main_question.setText(THIRD_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 54:
+                tv_main_question.setText(FORTH_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 55:
+                tv_main_question.setText(FIFTH_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 56:
+                tv_main_question.setText(SIXTH_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 57:
+                tv_main_question.setText(SEVENTH_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 58:
+                tv_main_question.setText(EIGHTH_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 59:
+                tv_main_question.setText(NINTH_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 60:
+                tv_main_question.setText(TENTH_QUESTION_GONNA_RE_ZHU);
+                animToShowViews(cl_with_quiz_question);
+                break;
+        }
     }
     private void setInStartView(View... ll_for_start) {
         for (View ll : ll_for_start) {

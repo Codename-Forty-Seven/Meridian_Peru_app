@@ -611,7 +611,7 @@ public class TamanrassetGameUtils implements GameProcessInterface {
             img_lock_tamanrasset.setVisibility(View.GONE);
 
             activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
+            activity.findViewById(R.id.ll_mumbai_progress).setEnabled(false);
             activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
             activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
             animToShowViews(cl_with_progress);

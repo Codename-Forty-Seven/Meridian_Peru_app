@@ -1,19 +1,23 @@
-package meridian.travel.peru.app.utils.london;
+package meridian.travel.peru.app.utils.mumbai;
 
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.EIGHTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.FIFTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.FIRST_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.FORTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.NINTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.SECOND_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.SEVENTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.SIXTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.TENTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.THIRD_QUESTION_LONDON;
+import static meridian.travel.peru.app.utils.ajim.ConstantsAjim.TXT_MAIN_FESTIVAL_AJIM;
+import static meridian.travel.peru.app.utils.albufera.ConstantsAlbufera.TXT_MAIN_FESTIVAL_ALBUFERA;
+import static meridian.travel.peru.app.utils.gonna_re_zhu.ConstantsGonnaReZhu.TXT_MAIN_FESTIVAL_GONNA_RE_ZHU;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_FESTIVAL_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_GREENWICH;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_ROYAL_OBSERVATORY;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.EIGHTH_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.FIFTH_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.FIRST_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.FORTH_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.NINTH_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.SECOND_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.SEVENTH_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.SIXTH_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.TENTH_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.THIRD_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.TXT_MAIN_FESTIVAL_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.TXT_MAIN_MUMBAI;
+import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.TXT_MAIN_FESTIVAL_TAMANRASSET;
+import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.TXT_MAIN_FESTIVAL_VILLAJOYOSA;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
@@ -26,35 +30,49 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import meridian.travel.peru.app.R;
 import meridian.travel.peru.app.utils.CircularProgressBar;
 import meridian.travel.peru.app.utils.GameProcessInterface;
 
-public class LondonGameUtils implements GameProcessInterface {
+public class MumbaiGameUtils implements GameProcessInterface {
     private final Activity activity;
 
-    public LondonGameUtils(Activity activity) {
+    public MumbaiGameUtils(Activity activity) {
         this.activity = activity;
+    }
+
+    @Override
+    public void showAllOpenCities(View viewToShow) {
+        activity.findViewById(R.id.tv_villajoyosa).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_albufera).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_ajim).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_tamanrasset).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_gonna_re_zhu).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_mumbai).setVisibility(View.VISIBLE);
+        animToShowViews(viewToShow);
+    }
+
+    @Override
+    public void showFestivalElements(View viewToShow) {
+        activity.findViewById(R.id.tv_with_festival_london);
+        activity.findViewById(R.id.tv_with_festival_villajoyosa).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_with_festival_albufera).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_with_festival_ajim).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_with_festival_tamanrasset).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_with_festival_gonna_re_zhu).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_with_festival_mumbai).setVisibility(View.VISIBLE);
+        animToShowViews(viewToShow);
     }
 
     @Override
     public void showMainElements(View viewToShow) {
         ImageView img_current_city = activity.findViewById(R.id.img_current_city);
         ImageView img_current_stop = activity.findViewById(R.id.img_current_stop);
-        img_current_city.setImageDrawable(activity.getResources().getDrawable(R.drawable.stop_london));
-        img_current_stop.setImageDrawable(activity.getResources().getDrawable(R.drawable.stop_number_1));
-        animToShowViews(viewToShow);
-    }
-
-    @Override
-    public void showAllOpenCities(View viewToShow) {
-        animToShowViews(viewToShow);
-    }
-
-    @Override
-    public void showFestivalElements(View viewToShow) {
-        TextView txt = activity.findViewById(R.id.tv_with_festival_london);
-        txt.setText(activity.getResources().getString(R.string.txt_festival_london));
+        CircleImageView img_current_map_element = activity.findViewById(R.id.img_current_map_element);
+        img_current_city.setImageDrawable(activity.getResources().getDrawable(R.drawable.stop_mumbai));
+        img_current_stop.setImageDrawable(activity.getResources().getDrawable(R.drawable.stop_number_7));
+        img_current_map_element.setImageResource(R.drawable.img_map_mumbai);
         animToShowViews(viewToShow);
     }
 
@@ -76,6 +94,72 @@ public class LondonGameUtils implements GameProcessInterface {
             img_main_4.setTag(R.drawable.img_london_4);
             img_main_5.setImageResource(R.drawable.img_london_5);
             img_main_5.setTag(R.drawable.img_london_5);
+        } else if (tv_whatClick == activity.findViewById(R.id.tv_villajoyosa)) {
+            img_main_1.setImageResource(R.drawable.img_villajoyosa);
+            img_main_1.setTag(R.drawable.img_villajoyosa);
+            img_main_2.setImageResource(R.drawable.img_villajoyosa_2);
+            img_main_2.setTag(R.drawable.img_villajoyosa_2);
+            img_main_3.setImageResource(R.drawable.img_villajoyosa_3);
+            img_main_3.setTag(R.drawable.img_villajoyosa_3);
+            img_main_4.setImageResource(R.drawable.img_villajoyosa_4);
+            img_main_4.setTag(R.drawable.img_villajoyosa_4);
+            img_main_5.setImageResource(R.drawable.img_villajoyosa_5);
+            img_main_5.setTag(R.drawable.img_villajoyosa_5);
+        } else if (tv_whatClick == activity.findViewById(R.id.tv_albufera)) {
+            img_main_1.setImageResource(R.drawable.img_albufera_3);
+            img_main_1.setTag(R.drawable.img_albufera_3);
+            img_main_2.setImageResource(R.drawable.img_albufera_4);
+            img_main_2.setTag(R.drawable.img_albufera_4);
+            img_main_3.setImageResource(R.drawable.img_valencia_3);
+            img_main_3.setTag(R.drawable.img_valencia_3);
+            img_main_4.setImageResource(R.drawable.img_valencia_4);
+            img_main_4.setTag(R.drawable.img_valencia_4);
+            img_main_5.setImageResource(R.drawable.img_valencia_5);
+            img_main_5.setTag(R.drawable.img_valencia_5);
+        } else if (tv_whatClick == activity.findViewById(R.id.tv_ajim)) {
+            img_main_1.setImageResource(R.drawable.img_ajim);
+            img_main_1.setTag(R.drawable.img_ajim);
+            img_main_2.setImageResource(R.drawable.img_ajim_2);
+            img_main_2.setTag(R.drawable.img_ajim_2);
+            img_main_3.setImageResource(R.drawable.img_ajim_3);
+            img_main_3.setTag(R.drawable.img_ajim_3);
+            img_main_4.setImageResource(R.drawable.img_ajim_4);
+            img_main_4.setTag(R.drawable.img_ajim_4);
+            img_main_5.setImageResource(R.drawable.img_ajim_5);
+            img_main_5.setTag(R.drawable.img_ajim_5);
+        } else if (tv_whatClick == activity.findViewById(R.id.tv_tamanrasset)) {
+            img_main_1.setImageResource(R.drawable.img_tamanrasset);
+            img_main_1.setTag(R.drawable.img_tamanrasset);
+            img_main_2.setImageResource(R.drawable.img_tamanrasset_2);
+            img_main_2.setTag(R.drawable.img_tamanrasset_2);
+            img_main_3.setImageResource(R.drawable.img_tamanrasset_3);
+            img_main_3.setTag(R.drawable.img_tamanrasset_3);
+            img_main_4.setImageResource(R.drawable.img_tamanrasset_4);
+            img_main_4.setTag(R.drawable.img_tamanrasset_4);
+            img_main_5.setImageResource(R.drawable.img_tamanrasset_5);
+            img_main_5.setTag(R.drawable.img_tamanrasset_5);
+        } else if (tv_whatClick == activity.findViewById(R.id.tv_gonna_re_zhu)) {
+            img_main_1.setImageResource(R.drawable.img_gonarezhou);
+            img_main_1.setTag(R.drawable.img_gonarezhou);
+            img_main_2.setImageResource(R.drawable.img_gonarezhou_2);
+            img_main_2.setTag(R.drawable.img_gonarezhou_2);
+            img_main_3.setImageResource(R.drawable.img_gonarezhou_3);
+            img_main_3.setTag(R.drawable.img_gonarezhou_3);
+            img_main_4.setImageResource(R.drawable.img_gonarezhou_4);
+            img_main_4.setTag(R.drawable.img_gonarezhou_4);
+            img_main_5.setImageResource(R.drawable.img_gonarezhou_5);
+            img_main_5.setTag(R.drawable.img_gonarezhou_5);
+        } else if (tv_whatClick == activity.findViewById(R.id.tv_mumbai)) {
+            img_main_1.setImageResource(R.drawable.img_mumbai);
+            img_main_1.setTag(R.drawable.img_mumbai);
+            img_main_2.setImageResource(R.drawable.img_mumbai_2);
+            img_main_2.setTag(R.drawable.img_mumbai_2);
+            img_main_3.setImageResource(R.drawable.img_mumbai_3);
+            img_main_3.setTag(R.drawable.img_mumbai_3);
+            img_main_4.setImageResource(R.drawable.img_mumbai_4);
+            img_main_4.setTag(R.drawable.img_mumbai_4);
+            img_main_5.setImageResource(R.drawable.img_mumbai_5);
+            img_main_5.setTag(R.drawable.img_mumbai_5);
         }
         animToShowViews(viewToShow);
     }
@@ -119,7 +203,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 tv_quiz_question_7, tv_quiz_question_8, tv_quiz_question_9, tv_quiz_question_10);
         setInStartImageView(img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9, img_10);
         switch (currentLevel) {
-            case 1: {
+            case 61: {
                 ll_first_question.setEnabled(true);
                 tv_quiz_question_1.setEnabled(true);
                 ll_first_question.setBackground(back);
@@ -135,7 +219,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 ll_tenth_question.setEnabled(false);
                 break;
             }
-            case 2: {
+            case 62: {
                 ll_first_question.setEnabled(false);
                 ll_first_question.setBackground(back);
                 img_1.setVisibility(View.VISIBLE);
@@ -148,9 +232,9 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_2.setVisibility(View.INVISIBLE);
                 break;
             }
-            case 3: {
-                ll_first_question.setBackground(back);
+            case 63: {
                 ll_first_question.setEnabled(false);
+                ll_first_question.setBackground(back);
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -168,12 +252,12 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_3.setVisibility(View.INVISIBLE);
                 break;
             }
-            case 4: {
+            case 64: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
-                ll_first_question.setBackground(back);
                 ll_first_question.setEnabled(false);
+                ll_first_question.setBackground(back);
                 tv_quiz_question_1.setEnabled(false);
                 ll_second_question.setEnabled(false);
                 ll_second_question.setBackground(back);
@@ -195,7 +279,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_4.setEnabled(false);
                 break;
             }
-            case 5: {
+            case 65: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -228,7 +312,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_5.setEnabled(false);
                 break;
             }
-            case 6: {
+            case 66: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -267,7 +351,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_6.setEnabled(false);
                 break;
             }
-            case 7: {
+            case 67: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -312,7 +396,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_7.setEnabled(false);
                 break;
             }
-            case 8: {
+            case 68: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -363,7 +447,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_8.setEnabled(false);
                 break;
             }
-            case 9: {
+            case 69: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -420,7 +504,7 @@ public class LondonGameUtils implements GameProcessInterface {
                 img_9.setEnabled(false);
                 break;
             }
-            case 10: {
+            case 70: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -487,6 +571,132 @@ public class LondonGameUtils implements GameProcessInterface {
         animToShowViews(viewToShow);
     }
 
+    @Override
+    public void showQuizListProgress(View cl_with_progress, int currentLevel) {
+        activity.findViewById(R.id.london_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.villajoyosa_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.albufera_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.ajim_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.tamanrasset_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.gonna_re_zhu_progress_bar).setVisibility(View.GONE);
+        CircularProgressBar mumbai_progress_bar = activity.findViewById(R.id.mumbai_progress_bar);
+        Drawable completeLayout = activity.getDrawable(R.drawable.design_for_complete_quiz);
+        Drawable currentLayout = activity.getDrawable(R.drawable.anim_click_for_progress_city);
+        ImageView img_lock_london = activity.findViewById(R.id.img_lock_london);
+        ImageView img_lock_villajoyosa = activity.findViewById(R.id.img_lock_villajoyosa);
+        ImageView img_lock_albufera = activity.findViewById(R.id.img_lock_albufera);
+        ImageView img_lock_ajim = activity.findViewById(R.id.img_lock_ajim);
+        ImageView img_lock_tamanrasset = activity.findViewById(R.id.img_lock_tamanrasset);
+        ImageView img_lock_gonna_re_zhu = activity.findViewById(R.id.img_lock_gonna_re_zhu);
+        ImageView img_lock_mumbai = activity.findViewById(R.id.img_lock_mumbai);
+        LinearLayout ll_london_progress = activity.findViewById(R.id.ll_london_progress);
+        LinearLayout ll_villajoyosa_progress = activity.findViewById(R.id.ll_villajoyosa_progress);
+        LinearLayout ll_albufera_progress = activity.findViewById(R.id.ll_albufera_progress);
+        LinearLayout ll_ajim_progress = activity.findViewById(R.id.ll_ajim_progress);
+        LinearLayout ll_tamanrasset_progress = activity.findViewById(R.id.ll_tamanrasset_progress);
+        LinearLayout ll_gonna_re_zhu_progress = activity.findViewById(R.id.ll_gonna_re_zhu_progress);
+        LinearLayout ll_mumbai_progress = activity.findViewById(R.id.ll_mumbai_progress);
+        if (currentLevel > 60 && currentLevel <= 70) {
+            ll_london_progress.setEnabled(false);
+            ll_london_progress.setBackground(completeLayout);
+            img_lock_london.setImageResource(R.drawable.img_unlock);
+            img_lock_london.setVisibility(View.VISIBLE);
+
+            ll_villajoyosa_progress.setEnabled(false);
+            ll_villajoyosa_progress.setBackground(completeLayout);
+            img_lock_villajoyosa.setImageResource(R.drawable.img_unlock);
+            img_lock_villajoyosa.setVisibility(View.VISIBLE);
+
+            ll_albufera_progress.setEnabled(false);
+            ll_albufera_progress.setBackground(completeLayout);
+            img_lock_albufera.setImageResource(R.drawable.img_unlock);
+            img_lock_albufera.setVisibility(View.VISIBLE);
+
+            ll_ajim_progress.setEnabled(false);
+            ll_ajim_progress.setBackground(completeLayout);
+            img_lock_ajim.setImageResource(R.drawable.img_unlock);
+            img_lock_ajim.setVisibility(View.VISIBLE);
+
+            ll_tamanrasset_progress.setEnabled(false);
+            ll_tamanrasset_progress.setBackground(completeLayout);
+            img_lock_tamanrasset.setImageResource(R.drawable.img_unlock);
+            img_lock_tamanrasset.setVisibility(View.VISIBLE);
+
+            ll_gonna_re_zhu_progress.setEnabled(true);
+            ll_gonna_re_zhu_progress.setBackground(completeLayout);
+            img_lock_gonna_re_zhu.setImageResource(R.drawable.img_unlock);
+            img_lock_gonna_re_zhu.setVisibility(View.VISIBLE);
+
+            ll_mumbai_progress.setEnabled(true);
+            ll_mumbai_progress.setBackground(currentLayout);
+            mumbai_progress_bar.setProgressText(10);
+            mumbai_progress_bar.setProgress(currentLevel - 60);
+            mumbai_progress_bar.setVisibility(View.VISIBLE);
+            img_lock_mumbai.setVisibility(View.GONE);
+
+            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
+            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
+            animToShowViews(cl_with_progress);
+        }
+    }
+
+    @Override
+    public void showViewForStudy(View viewToShow) {
+        TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
+        TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
+        tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_mumbai));
+        tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_MUMBAI);
+        animToShowViews(viewToShow);
+    }
+
+    @Override
+    public void showQuestionOnView(View cl_with_quiz_question, int currentLevel) {
+        TextView tv_main_question = activity.findViewById(R.id.tv_quiz_question);
+        switch (currentLevel) {
+            case 61:
+                tv_main_question.setText(FIRST_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 62:
+                tv_main_question.setText(SECOND_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 63:
+                tv_main_question.setText(THIRD_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 64:
+                tv_main_question.setText(FORTH_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 65:
+                tv_main_question.setText(FIFTH_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 66:
+                tv_main_question.setText(SIXTH_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 67:
+                tv_main_question.setText(SEVENTH_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 68:
+                tv_main_question.setText(EIGHTH_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 69:
+                tv_main_question.setText(NINTH_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+            case 70:
+                tv_main_question.setText(TENTH_QUESTION_MUMBAI);
+                animToShowViews(cl_with_quiz_question);
+                break;
+        }
+    }
+
+
     private void setInStartView(View... ll_for_start) {
         for (View ll : ll_for_start) {
             ll.setEnabled(false);
@@ -509,47 +719,45 @@ public class LondonGameUtils implements GameProcessInterface {
     }
 
     @Override
-    public void showQuizListProgress(View cl_with_progress, int currentLevel) {
-        CircularProgressBar london_progress_bar = activity.findViewById(R.id.london_progress_bar);
-        if (currentLevel > 0 && currentLevel <= 10) {
-            london_progress_bar.setProgressText(10);
-            london_progress_bar.setProgress(currentLevel);
-            activity.findViewById(R.id.ll_london_progress).setEnabled(true);
-            activity.findViewById(R.id.ll_villajoyosa_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_albufera_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_ajim_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_tamanrasset_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_mumbai_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
-            animToShowViews(cl_with_progress);
+    public boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel) {
+        TextView rightAnswer;
+        switch (currentLevel) {
+            case 63:
+            case 70:
+                rightAnswer = activity.findViewById(R.id.tv_quiz_variant_c);
+                return tv_quiz_variant.getId() == rightAnswer.getId();
+            case 61:
+            case 69:
+                rightAnswer = activity.findViewById(R.id.tv_quiz_variant_b);
+                return tv_quiz_variant.getId() == rightAnswer.getId();
+            case 64:
+            case 66:
+            case 68:
+                rightAnswer = activity.findViewById(R.id.tv_quiz_variant_a);
+                return tv_quiz_variant.getId() == rightAnswer.getId();
+            case 62:
+            case 65:
+            case 67:
+                rightAnswer = activity.findViewById(R.id.tv_quiz_variant_d);
+                return tv_quiz_variant.getId() == rightAnswer.getId();
+            default:
+                return false;
         }
     }
 
     @Override
-    public void showViewForStudy(View viewToShow) {
-        TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
-        TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
-        TextView tv_next_place_for_study_about_current_stop = activity.findViewById(R.id.tv_next_place_for_study_about_current_stop);
-        tv_next_place_for_study_about_current_stop.setVisibility(View.VISIBLE);
-        tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_header_royal_observatory));
-        tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_ROYAL_OBSERVATORY);
-        animToShowViews(viewToShow);
+    public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
+        if (currentLevel > 60 && currentLevel <= 70) {
+            TextView tv_header_current_city_marker = activity.findViewById(R.id.tv_header_current_city_marker);
+            TextView tv_main_text_current_city_marker = activity.findViewById(R.id.tv_main_text_current_city_marker);
+            tv_header_current_city_marker.setText(R.string.txt_mumbai);
+            tv_main_text_current_city_marker.setText(TXT_MAIN_MUMBAI);
+            animToShowViews(cl_with_info_about_current_city);
+        }
     }
 
     @Override
     public void showSecondPlace(View cl_for_study_about_current_stop) {
-        ImageView img_current_place = activity.findViewById(R.id.img_current_place);
-        TextView tv_header_for_study_about_current_stop = activity.findViewById(R.id.tv_header_for_study_about_current_stop);
-        TextView tv_main_txt_for_study_about_current_stop = activity.findViewById(R.id.tv_main_txt_for_study_about_current_stop);
-        TextView tv_next_place_for_study_about_current_stop = activity.findViewById(R.id.tv_next_place_for_study_about_current_stop);
-        img_current_place.setImageResource(R.drawable.img_greenwich);
-        tv_next_place_for_study_about_current_stop.setVisibility(View.VISIBLE);
-        tv_next_place_for_study_about_current_stop.setText(R.string.txt_previous_place);
-        tv_header_for_study_about_current_stop.setText(activity.getResources().getString(R.string.txt_header_greenwich));
-        tv_main_txt_for_study_about_current_stop.setText(TXT_MAIN_GREENWICH);
-        animToShowViews(cl_for_study_about_current_stop);
 
     }
 
@@ -561,92 +769,42 @@ public class LondonGameUtils implements GameProcessInterface {
             tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_london));
             tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_LONDON);
             animToShowViews(cl_for_sharing);
-        }
-        animToShowViews(cl_for_sharing);
-    }
-
-    @Override
-    public void showQuestionOnView(View cl_with_quiz_question, int currentLevel) {
-        TextView tv_main_question = activity.findViewById(R.id.tv_quiz_question);
-        switch (currentLevel) {
-            case 1:
-                tv_main_question.setText(FIRST_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 2:
-                tv_main_question.setText(SECOND_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 3:
-                tv_main_question.setText(THIRD_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 4:
-                tv_main_question.setText(FORTH_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 5:
-                tv_main_question.setText(FIFTH_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 6:
-                tv_main_question.setText(SIXTH_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 7:
-                tv_main_question.setText(SEVENTH_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 8:
-                tv_main_question.setText(EIGHTH_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 9:
-                tv_main_question.setText(NINTH_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-            case 10:
-                tv_main_question.setText(TENTH_QUESTION_LONDON);
-                animToShowViews(cl_with_quiz_question);
-                break;
-        }
-    }
-
-    @Override
-    public boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel) {
-        TextView rightAnswer;
-        switch (currentLevel) {
-            case 1:
-            case 4:
-            case 9:
-                rightAnswer = activity.findViewById(R.id.tv_quiz_variant_a);
-                return tv_quiz_variant.getId() == rightAnswer.getId();
-            case 2:
-            case 10:
-                rightAnswer = activity.findViewById(R.id.tv_quiz_variant_d);
-                return tv_quiz_variant.getId() == rightAnswer.getId();
-            case 3:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-                rightAnswer = activity.findViewById(R.id.tv_quiz_variant_b);
-                return tv_quiz_variant.getId() == rightAnswer.getId();
-            default:
-                return false;
-        }
-    }
-
-    @Override
-    public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
-        if (currentLevel > 0 && currentLevel <= 10) {
-            ImageView img_current_city_marker = activity.findViewById(R.id.img_current_city_marker);
-            TextView tv_header_current_city_marker = activity.findViewById(R.id.tv_header_current_city_marker);
-            TextView tv_main_text_current_city_marker = activity.findViewById(R.id.tv_main_text_current_city_marker);
-            img_current_city_marker.setImageResource(R.drawable.img_london_7);
-            tv_header_current_city_marker.setText(R.string.txt_london);
-            tv_main_text_current_city_marker.setText(TXT_MAIN_LONDON);
-            animToShowViews(cl_with_info_about_current_city);
+        } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_villajoyosa)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_villajoyosa));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_VILLAJOYOSA);
+            animToShowViews(cl_for_sharing);
+        } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_albufera)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_albufera));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_ALBUFERA);
+            animToShowViews(cl_for_sharing);
+        } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_ajim)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_ajim));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_AJIM);
+            animToShowViews(cl_for_sharing);
+        } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_tamanrasset)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_tamanrasset));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_TAMANRASSET);
+            animToShowViews(cl_for_sharing);
+        } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_gonna_re_zhu)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_gonna_re_zhu));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_GONNA_RE_ZHU);
+            animToShowViews(cl_for_sharing);
+        } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_mumbai)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_mumbai));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_MUMBAI);
+            animToShowViews(cl_for_sharing);
         }
     }
 

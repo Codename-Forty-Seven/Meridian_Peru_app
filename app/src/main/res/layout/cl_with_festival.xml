@@ -129,10 +129,32 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/tv_with_festival_botswana"
+        app:layout_constraintBottom_toTopOf="@+id/tv_with_festival_mumbai"
         app:layout_constraintEnd_toEndOf="@+id/tv_with_festival_london"
         app:layout_constraintStart_toStartOf="@+id/tv_with_festival_london"
         app:layout_constraintTop_toBottomOf="@+id/tv_with_festival_tamanrasset" />
+
+    <TextView
+        android:id="@+id/tv_with_festival_mumbai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/anim_click_text"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/abril_fatface"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="@string/txt_festival_mumbai"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/tv_with_festival_botswana"
+        app:layout_constraintEnd_toEndOf="@+id/tv_with_festival_london"
+        app:layout_constraintStart_toStartOf="@+id/tv_with_festival_london"
+        app:layout_constraintTop_toBottomOf="@+id/tv_with_festival_gonna_re_zhu" />
 
     <TextView
         android:id="@+id/tv_with_festival_botswana"
@@ -154,7 +176,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_with_festival_antarctica"
         app:layout_constraintEnd_toEndOf="@+id/tv_with_festival_london"
         app:layout_constraintStart_toStartOf="@+id/tv_with_festival_london"
-        app:layout_constraintTop_toBottomOf="@+id/tv_with_festival_gonna_re_zhu" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_with_festival_mumbai" />
 
     <TextView
         android:id="@+id/tv_with_festival_antarctica"
@@ -169,28 +191,6 @@
         android:gravity="center"
         android:padding="7dp"
         android:text="@string/txt_festival_antarctica"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/tv_with_festival_longa_market"
-        app:layout_constraintEnd_toEndOf="@+id/tv_with_festival_london"
-        app:layout_constraintStart_toStartOf="@+id/tv_with_festival_london"
-        app:layout_constraintTop_toBottomOf="@+id/tv_with_festival_botswana" />
-
-    <TextView
-        android:id="@+id/tv_with_festival_longa_market"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/anim_click_text"
-        android:clickable="true"
-        android:focusable="true"
-        android:fontFamily="@font/abril_fatface"
-        android:gravity="center"
-        android:padding="7dp"
-        android:text="@string/txt_festival_longa_market"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="18sp"

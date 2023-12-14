@@ -14,18 +14,7 @@ import static meridian.travel.peru.app.utils.albufera.ConstantsAlbufera.TXT_MAIN
 import static meridian.travel.peru.app.utils.albufera.ConstantsAlbufera.TXT_MAIN_FESTIVAL_ALBUFERA;
 import static meridian.travel.peru.app.utils.albufera.ConstantsAlbufera.TXT_MAIN_VALENCIA;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_FESTIVAL_LONDON;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.EIGHTH_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.FIFTH_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.FIRST_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.FORTH_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.NINTH_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.SECOND_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.SEVENTH_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.SIXTH_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.TENTH_QUESTION_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.THIRD_QUESTION_VILLAJOYOSA;
 import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.TXT_MAIN_FESTIVAL_VILLAJOYOSA;
-import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.TXT_MAIN_VILLAJOYOSA;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
@@ -587,7 +576,7 @@ public class AlbuferaGameUtils implements GameProcessInterface {
             activity.findViewById(R.id.ll_ajim_progress).setEnabled(false);
             activity.findViewById(R.id.ll_tamanrasset_progress).setEnabled(false);
             activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
+            activity.findViewById(R.id.ll_mumbai_progress).setEnabled(false);
             activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
             activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
             animToShowViews(cl_with_progress);

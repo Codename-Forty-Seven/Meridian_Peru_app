@@ -21,14 +21,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Arrays;
-
 import meridian.travel.peru.app.R;
 import meridian.travel.peru.app.utils.ajim.AjimGameUtils;
 import meridian.travel.peru.app.utils.albufera.AlbuferaGameUtils;
+import meridian.travel.peru.app.utils.antarctica.AntarcticaGameUtils;
 import meridian.travel.peru.app.utils.botswana.BotswanaGameUtils;
 import meridian.travel.peru.app.utils.gonna_re_zhu.GonnaReZhuGameUtils;
 import meridian.travel.peru.app.utils.london.LondonGameUtils;
+import meridian.travel.peru.app.utils.mumbai.MumbaiGameUtils;
 import meridian.travel.peru.app.utils.tamanrasset.TamanrassetGameUtils;
 import meridian.travel.peru.app.utils.villajoyosa.VillajoyosaGameUtils;
 
@@ -67,15 +67,14 @@ public class MainGameUtils {
             gameProcessInterface = new GonnaReZhuGameUtils(activity);
             currentCity = activity.getString(R.string.txt_gonna_re_zhu);
         } else if (currentLevel > 60 && currentLevel <= 70) {
+            gameProcessInterface = new MumbaiGameUtils(activity);
+            currentCity = activity.getString(R.string.txt_mumbai);
+        } else if (currentLevel > 70 && currentLevel <= 80) {
             gameProcessInterface = new BotswanaGameUtils(activity);
             currentCity = activity.getString(R.string.txt_botswana);
-        } else if (currentLevel > 70 && currentLevel <= 80) {
-//            gameProcessInterface = new AntarcticaGameUtils(activity);
-            currentCity = activity.getString(R.string.txt_antarctica);
         } else if (currentLevel > 80 && currentLevel <= 90) {
-            //todo: find info about this place
-//            gameProcessInterface = new LongaMarketGameUtils(activity);
-            currentCity = activity.getString(R.string.txt_longa_market);
+            gameProcessInterface = new AntarcticaGameUtils(activity);
+            currentCity = activity.getString(R.string.txt_antarctica);
         } else {
             gameProcessInterface = new LondonGameUtils(activity);
             currentCity = activity.getString(R.string.txt_no_access);
@@ -158,9 +157,12 @@ public class MainGameUtils {
             ids = new int[]{R.drawable.img_gonarezhou, R.drawable.img_gonarezhou_2, R.drawable.img_gonarezhou_3,
                     R.drawable.img_gonarezhou_4, R.drawable.img_gonarezhou_5};
         } else if (currentLevel > 60 && currentLevel <= 70) {
+            ids = new int[]{R.drawable.img_mumbai, R.drawable.img_mumbai_2, R.drawable.img_mumbai_3,
+                    R.drawable.img_mumbai_4, R.drawable.img_mumbai_5};
+        } else if (currentLevel > 70 && currentLevel <= 80) {
             ids = new int[]{R.drawable.img_botswana, R.drawable.img_botswana_2, R.drawable.img_botswana_3,
                     R.drawable.img_botswana_4, R.drawable.img_botswana_5};
-        } else if (currentLevel > 70 && currentLevel <= 80) {
+        } else if (currentLevel > 80 && currentLevel <= 90) {
             ids = new int[]{R.drawable.img_antarctica, R.drawable.img_antarctica_2, R.drawable.img_antarctica_3,
                     R.drawable.img_antarctica_4, R.drawable.img_antarctica_5};
         }
@@ -183,10 +185,13 @@ public class MainGameUtils {
         } else if (currentLevel > 50 && currentLevel <= 60) {
             ids = new int[]{R.drawable.img_gonarezhou, R.drawable.img_gonarezhou_2, R.drawable.img_gonarezhou_3,
                     R.drawable.img_gonarezhou_4, R.drawable.img_gonarezhou_5};
-        } else if (currentLevel > 60 && currentLevel <= 70) {
+        }  else if (currentLevel > 60 && currentLevel <= 70) {
+            ids = new int[]{R.drawable.img_mumbai, R.drawable.img_mumbai_2, R.drawable.img_mumbai_3,
+                    R.drawable.img_mumbai_4, R.drawable.img_mumbai_5};
+        } else if (currentLevel > 70 && currentLevel <= 80) {
             ids = new int[]{R.drawable.img_botswana, R.drawable.img_botswana_2, R.drawable.img_botswana_3,
                     R.drawable.img_botswana_4, R.drawable.img_botswana_5};
-        } else if (currentLevel > 70 && currentLevel <= 80) {
+        } else if (currentLevel > 80 && currentLevel <= 90) {
             ids = new int[]{R.drawable.img_antarctica, R.drawable.img_antarctica_2, R.drawable.img_antarctica_3,
                     R.drawable.img_antarctica_4, R.drawable.img_antarctica_5};
         } else {
@@ -211,8 +216,8 @@ public class MainGameUtils {
             ids = new int[]{R.drawable.img_festival_tamanrasset, R.drawable.img_festival_tamanrasset_2, R.drawable.img_festival_tamanrasset_3};
         } else if (whatPressedId == R.id.tv_with_festival_gonna_re_zhu) {
             ids = new int[]{R.drawable.img_festival_gonarezhou, R.drawable.img_festival_gonarezhou_2};
-        } else if (whatPressedId == R.id.tv_with_festival_longa_market) {
-            ids = new int[]{R.drawable.img_festival_gonarezhou, R.drawable.img_festival_gonarezhou_2};
+        } else if (whatPressedId == R.id.tv_with_festival_mumbai) {
+            ids = new int[]{R.drawable.img_festival_mumbai, R.drawable.img_festival_mumbai_2, R.drawable.img_festival_mumbai_3};
         } else if (whatPressedId == R.id.tv_with_festival_botswana) {
             ids = new int[]{R.drawable.img_festival_botswana, R.drawable.img_festival_botswana_2,
                     R.drawable.img_festival_botswana_3};
@@ -274,14 +279,6 @@ public class MainGameUtils {
                 Settings.Global.ADB_ENABLED, 0
         );
         return adb == 1;
-    }
-
-    public boolean isDeveloperModeEnabled(Context context) {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1
-                && Settings.Global.getInt(
-                context.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0
-        ) != 0;
     }
 
     public void unregisterReceiver() {

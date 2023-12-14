@@ -14,6 +14,16 @@ import static meridian.travel.peru.app.utils.antarctica.ConstantsAntarctica.TENT
 import static meridian.travel.peru.app.utils.antarctica.ConstantsAntarctica.THIRD_QUESTION_ANTARCTICA;
 import static meridian.travel.peru.app.utils.antarctica.ConstantsAntarctica.TXT_MAIN_ANTARCTICA;
 import static meridian.travel.peru.app.utils.antarctica.ConstantsAntarctica.TXT_MAIN_FESTIVAL_ANTARCTICA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.EIGHTH_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.FIFTH_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.FIRST_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.FORTH_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.NINTH_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.SECOND_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.SEVENTH_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.SIXTH_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.TENTH_QUESTION_BOTSWANA;
+import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.THIRD_QUESTION_BOTSWANA;
 import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.TXT_MAIN_FESTIVAL_BOTSWANA;
 import static meridian.travel.peru.app.utils.gonna_re_zhu.ConstantsGonnaReZhu.TXT_MAIN_FESTIVAL_GONNA_RE_ZHU;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_FESTIVAL_LONDON;
@@ -217,7 +227,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 tv_quiz_question_7, tv_quiz_question_8, tv_quiz_question_9, tv_quiz_question_10);
         setInStartImageView(img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9, img_10);
         switch (currentLevel) {
-            case 71: {
+            case 81: {
                 ll_first_question.setEnabled(true);
                 tv_quiz_question_1.setEnabled(true);
                 ll_first_question.setBackground(back);
@@ -233,7 +243,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 ll_tenth_question.setEnabled(false);
                 break;
             }
-            case 72: {
+            case 82: {
                 ll_first_question.setEnabled(false);
                 ll_first_question.setBackground(back);
                 img_1.setVisibility(View.VISIBLE);
@@ -246,7 +256,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_2.setVisibility(View.INVISIBLE);
                 break;
             }
-            case 73: {
+            case 83: {
                 ll_first_question.setEnabled(false);
                 ll_first_question.setBackground(back);
                 img_1.setVisibility(View.VISIBLE);
@@ -266,7 +276,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_3.setVisibility(View.INVISIBLE);
                 break;
             }
-            case 74: {
+            case 84: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -293,7 +303,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_4.setEnabled(false);
                 break;
             }
-            case 75: {
+            case 85: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -326,7 +336,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_5.setEnabled(false);
                 break;
             }
-            case 76: {
+            case 86: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -365,7 +375,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_6.setEnabled(false);
                 break;
             }
-            case 77: {
+            case 87: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -410,7 +420,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_7.setEnabled(false);
                 break;
             }
-            case 78: {
+            case 88: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -461,7 +471,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_8.setEnabled(false);
                 break;
             }
-            case 79: {
+            case 89: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -518,7 +528,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
                 img_9.setEnabled(false);
                 break;
             }
-            case 80: {
+            case 90: {
                 img_1.setVisibility(View.VISIBLE);
                 img_1.setImageResource(R.drawable.img_unlock);
                 img_1.setEnabled(false);
@@ -623,6 +633,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
         ImageView img_lock_ajim = activity.findViewById(R.id.img_lock_ajim);
         ImageView img_lock_tamanrasset = activity.findViewById(R.id.img_lock_tamanrasset);
         ImageView img_lock_gonna_re_zhu = activity.findViewById(R.id.img_lock_gonna_re_zhu);
+        ImageView img_lock_mumbai = activity.findViewById(R.id.img_lock_mumbai);
         ImageView img_lock_botswana = activity.findViewById(R.id.img_lock_botswana);
         ImageView img_lock_antarctica = activity.findViewById(R.id.img_lock_antarctica);
         LinearLayout ll_london_progress = activity.findViewById(R.id.ll_london_progress);
@@ -632,8 +643,9 @@ public class AntarcticaGameUtils implements GameProcessInterface {
         LinearLayout ll_tamanrasset_progress = activity.findViewById(R.id.ll_tamanrasset_progress);
         LinearLayout ll_gonna_re_zhu_progress = activity.findViewById(R.id.ll_gonna_re_zhu_progress);
         LinearLayout ll_botswana_progress = activity.findViewById(R.id.ll_botswana_progress);
+        LinearLayout ll_mumbai_progress = activity.findViewById(R.id.ll_mumbai_progress);
         LinearLayout ll_antarctica_progress = activity.findViewById(R.id.ll_antarctica_progress);
-        if (currentLevel > 70 && currentLevel <= 80) {
+        if (currentLevel > 80 && currentLevel <= 90) {
             ll_london_progress.setEnabled(false);
             ll_london_progress.setBackground(completeLayout);
             img_lock_london.setImageResource(R.drawable.img_unlock);
@@ -664,7 +676,10 @@ public class AntarcticaGameUtils implements GameProcessInterface {
             img_lock_gonna_re_zhu.setImageResource(R.drawable.img_unlock);
             img_lock_gonna_re_zhu.setVisibility(View.VISIBLE);
 
-            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
+            ll_mumbai_progress.setEnabled(false);
+            ll_mumbai_progress.setBackground(completeLayout);
+            img_lock_mumbai.setImageResource(R.drawable.img_unlock);
+            img_lock_mumbai.setVisibility(View.VISIBLE);
 
             ll_botswana_progress.setEnabled(false);
             ll_botswana_progress.setBackground(currentLayout);
@@ -674,7 +689,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
             ll_antarctica_progress.setEnabled(true);
             ll_antarctica_progress.setBackground(currentLayout);
             antarctica_progress_bar.setProgressText(10);
-            antarctica_progress_bar.setProgress(currentLevel - 70);
+            antarctica_progress_bar.setProgress(currentLevel - 80);
             antarctica_progress_bar.setVisibility(View.VISIBLE);
             img_lock_antarctica.setVisibility(View.GONE);
             animToShowViews(cl_with_progress);
@@ -694,43 +709,43 @@ public class AntarcticaGameUtils implements GameProcessInterface {
     public void showQuestionOnView(View cl_with_quiz_question, int currentLevel) {
         TextView tv_main_question = activity.findViewById(R.id.tv_quiz_question);
         switch (currentLevel) {
-            case 71:
+            case 81:
                 tv_main_question.setText(FIRST_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 72:
+            case 82:
                 tv_main_question.setText(SECOND_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 73:
+            case 83:
                 tv_main_question.setText(THIRD_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 74:
+            case 84:
                 tv_main_question.setText(FORTH_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 75:
+            case 85:
                 tv_main_question.setText(FIFTH_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 76:
+            case 86:
                 tv_main_question.setText(SIXTH_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 77:
+            case 87:
                 tv_main_question.setText(SEVENTH_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 78:
+            case 88:
                 tv_main_question.setText(EIGHTH_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 79:
+            case 89:
                 tv_main_question.setText(NINTH_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;
-            case 80:
+            case 90:
                 tv_main_question.setText(TENTH_QUESTION_ANTARCTICA);
                 animToShowViews(cl_with_quiz_question);
                 break;

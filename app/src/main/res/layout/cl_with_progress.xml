@@ -274,7 +274,7 @@
         android:orientation="horizontal"
         android:padding="10dp"
         android:weightSum="3"
-        app:layout_constraintBottom_toTopOf="@+id/ll_longa_market_progress"
+        app:layout_constraintBottom_toTopOf="@+id/ll_mumbai_progress"
         app:layout_constraintEnd_toEndOf="@+id/ll_tamanrasset_progress"
         app:layout_constraintStart_toStartOf="@+id/ll_tamanrasset_progress"
         app:layout_constraintTop_toBottomOf="@+id/ll_tamanrasset_progress">
@@ -315,7 +315,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_longa_market_progress"
+        android:id="@+id/ll_mumbai_progress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp"
@@ -331,7 +331,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_gonna_re_zhu_progress">
 
         <TextView
-            android:id="@+id/tv_longa_market_progress"
+            android:id="@+id/tv_mumbai_progress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -342,13 +342,13 @@
             android:fontFamily="@font/abril_fatface"
             android:gravity="center"
             android:padding="7dp"
-            android:text="@string/txt_longa_market"
+            android:text="@string/txt_mumbai"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
         <meridian.travel.peru.app.utils.CircularProgressBar
-            android:id="@+id/longa_market_progress_bar"
+            android:id="@+id/mumbai_progress_bar"
             android:layout_width="5dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -357,7 +357,7 @@
             android:visibility="gone" />
 
         <ImageView
-            android:id="@+id/img_lock_longa_market"
+            android:id="@+id/img_lock_mumbai"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -378,9 +378,9 @@
         android:padding="10dp"
         android:weightSum="3"
         app:layout_constraintBottom_toTopOf="@+id/ll_antarctica_progress"
-        app:layout_constraintEnd_toEndOf="@+id/ll_longa_market_progress"
-        app:layout_constraintStart_toStartOf="@+id/ll_longa_market_progress"
-        app:layout_constraintTop_toBottomOf="@+id/ll_longa_market_progress">
+        app:layout_constraintEnd_toEndOf="@+id/ll_mumbai_progress"
+        app:layout_constraintStart_toStartOf="@+id/ll_mumbai_progress"
+        app:layout_constraintTop_toBottomOf="@+id/ll_mumbai_progress">
 
         <TextView
             android:id="@+id/tv_botswana_progress"

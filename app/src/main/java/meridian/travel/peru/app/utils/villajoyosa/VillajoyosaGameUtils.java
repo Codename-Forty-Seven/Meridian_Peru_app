@@ -1,15 +1,5 @@
 package meridian.travel.peru.app.utils.villajoyosa;
 
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.EIGHTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.FIFTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.FIRST_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.FORTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.NINTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.SECOND_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.SEVENTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.SIXTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.TENTH_QUESTION_LONDON;
-import static meridian.travel.peru.app.utils.london.ConstantsLondon.THIRD_QUESTION_LONDON;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_FESTIVAL_LONDON;
 import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.EIGHTH_QUESTION_VILLAJOYOSA;
 import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.FIFTH_QUESTION_VILLAJOYOSA;
@@ -565,7 +555,7 @@ public class VillajoyosaGameUtils implements GameProcessInterface {
             activity.findViewById(R.id.ll_ajim_progress).setEnabled(false);
             activity.findViewById(R.id.ll_tamanrasset_progress).setEnabled(false);
             activity.findViewById(R.id.ll_gonna_re_zhu_progress).setEnabled(false);
-            activity.findViewById(R.id.ll_longa_market_progress).setEnabled(false);
+            activity.findViewById(R.id.ll_mumbai_progress).setEnabled(false);
             activity.findViewById(R.id.ll_botswana_progress).setEnabled(false);
             activity.findViewById(R.id.ll_antarctica_progress).setEnabled(false);
             animToShowViews(cl_with_progress);

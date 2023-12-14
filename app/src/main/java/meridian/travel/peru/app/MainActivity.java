@@ -6,13 +6,9 @@ import static meridian.travel.peru.app.utils.Constants.KEY_PRIVACY_AGREE;
 import static meridian.travel.peru.app.utils.Constants.NAME_PREF;
 import static meridian.travel.peru.app.utils.Constants.URL_FOR_REQUEST;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,11 +25,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Arrays;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import meridian.travel.peru.app.activities.policy.OfflinePolicyActivity;
@@ -46,22 +40,22 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private CircleImageView img_current_map_element;
     private LinearLayout ll_london_progress, ll_villajoyosa_progress, ll_albufera_progress, ll_ajim_progress,
-            ll_tamanrasset_progress, ll_gonna_re_zhu_progress, ll_longa_market_progress, ll_botswana_progress, ll_antarctica_progress, ll_first_question,
+            ll_tamanrasset_progress, ll_gonna_re_zhu_progress, ll_mumbai_progress, ll_botswana_progress, ll_antarctica_progress, ll_first_question,
             ll_second_question, ll_third_question, ll_forth_question, ll_fifth_question, ll_sixth_question, ll_seventh_question, ll_eighth_question, ll_ninth_question, ll_tenth_question;
     private ConstraintLayout cl_for_sharing, cl_main_page, cl_for_study_about_current_stop,
             cl_with_quiz_question, cl_with_quiz_questions_list, cl_with_cities, cl_with_festival,
             cl_with_photos, cl_with_progress, cl_with_info_about_current_city;
-    private ImageView img_map_marker, img_current_festival, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9, img_10;
+    private ImageView img_map_marker, img_current_festival;
     private ImageButton img_btn_airbnb, img_btn_booking, img_btn_share_progress, img_share_main_1, img_share_main_2, img_share_main_3,
             img_share_main_4, img_share_main_5;
     private int currentLevel = 0, currentMenuItem = 0;
     private String previousLayout = "", currentCity = "";
     private boolean firstStart;
     private TextView tv_current_city, tv_london, tv_villajoyosa, tv_albufera, tv_ajim, tv_tamanrasset, tv_gonna_re_zhu,
-            tv_longa_market, tv_botswana, tv_antarctica, tv_study, tv_quiz, tv_with_festival_london, tv_with_festival_villajoyosa, tv_with_festival_albufera,
-            tv_with_festival_ajim, tv_with_festival_tamanrasset, tv_with_festival_gonna_re_zhu, tv_with_festival_longa_market,
+            tv_mumbai, tv_botswana, tv_antarctica, tv_study, tv_quiz, tv_with_festival_london, tv_with_festival_villajoyosa, tv_with_festival_albufera,
+            tv_with_festival_ajim, tv_with_festival_tamanrasset, tv_with_festival_gonna_re_zhu, tv_with_festival_mumbai,
             tv_with_festival_botswana, tv_with_festival_antarctica, tv_london_progress, tv_villajoyosa_progress, tv_albufera_progress,
-            tv_ajim_progress, tv_tamanrasset_progress, tv_gonna_re_zhu_progress, tv_longa_market_progress, tv_botswana_progress, tv_antarctica_progress,
+            tv_ajim_progress, tv_tamanrasset_progress, tv_gonna_re_zhu_progress, tv_mumbai_progress, tv_botswana_progress, tv_antarctica_progress,
             tv_quiz_question_1, tv_quiz_question_2, tv_quiz_question_3, tv_quiz_question_4, tv_quiz_question_5, tv_quiz_question_6, tv_quiz_question_7,
             tv_quiz_question_8, tv_quiz_question_9, tv_quiz_question_10, tv_quiz_variant_a, tv_quiz_variant_b, tv_quiz_variant_c, tv_quiz_variant_d,
             tv_next_place_for_study_about_current_stop, tv_quiz_about_current_stop;
@@ -185,8 +179,8 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
-        ll_longa_market_progress.setOnClickListener(v -> {
-            if (!ll_longa_market_progress.isEnabled()) {
+        ll_mumbai_progress.setOnClickListener(v -> {
+            if (!ll_mumbai_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -194,8 +188,8 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showQuizListQuestions(cl_with_quiz_questions_list, currentLevel);
         });
-        tv_longa_market_progress.setOnClickListener(v -> {
-            if (!ll_longa_market_progress.isEnabled()) {
+        tv_mumbai_progress.setOnClickListener(v -> {
+            if (!ll_mumbai_progress.isEnabled()) {
                 Toast.makeText(this, R.string.txt_no_access, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -607,10 +601,10 @@ public class MainActivity extends AppCompatActivity {
             hideAllComponents();
             mainGameUtils.showPictures(cl_with_photos, tv_gonna_re_zhu);
         });
-        tv_longa_market.setOnClickListener(v -> {
+        tv_mumbai.setOnClickListener(v -> {
             previousLayout = "cl_with_cities";
             hideAllComponents();
-            mainGameUtils.showPictures(cl_with_photos, tv_longa_market);
+            mainGameUtils.showPictures(cl_with_photos, tv_mumbai);
         });
         tv_botswana.setOnClickListener(v -> {
             previousLayout = "cl_with_cities";
@@ -688,16 +682,16 @@ public class MainActivity extends AppCompatActivity {
             mainGameUtils.startCityImageAnimation(img_current_festival, mainGameUtils.getIdDrawablesFestival(tv_with_festival_gonna_re_zhu.getId()));
             mainGameUtils.showInfoAboutCurrentFestival(cl_for_sharing, currentLevel, tv_with_festival_gonna_re_zhu);
         });
-        tv_with_festival_longa_market.setOnClickListener(v -> {
+        tv_with_festival_mumbai.setOnClickListener(v -> {
             if (currentLevel < 70) {
                 Toast.makeText(this, R.string.txt_complete_all_quiz, Toast.LENGTH_LONG).show();
                 return;
             }
-            tv_current_city.setText(getString(R.string.txt_longa_market));
+            tv_current_city.setText(getString(R.string.txt_mumbai));
             previousLayout = "cl_with_festival";
             hideAllComponents();
-            mainGameUtils.startCityImageAnimation(img_current_festival, mainGameUtils.getIdDrawablesFestival(tv_with_festival_longa_market.getId()));
-            mainGameUtils.showInfoAboutCurrentFestival(cl_for_sharing, currentLevel, tv_with_festival_longa_market);
+            mainGameUtils.startCityImageAnimation(img_current_festival, mainGameUtils.getIdDrawablesFestival(tv_with_festival_mumbai.getId()));
+            mainGameUtils.showInfoAboutCurrentFestival(cl_for_sharing, currentLevel, tv_with_festival_mumbai);
         });
         tv_with_festival_botswana.setOnClickListener(v -> {
             if (currentLevel < 80) {
@@ -836,16 +830,6 @@ public class MainActivity extends AppCompatActivity {
         img_map_marker = findViewById(R.id.img_map_marker);
         img_current_map_element = findViewById(R.id.img_current_map_element);
         img_current_festival = findViewById(R.id.img_current_festival);
-        img_1 = findViewById(R.id.img_quiz_question_1);
-        img_2 = findViewById(R.id.img_quiz_question_2);
-        img_3 = findViewById(R.id.img_quiz_question_3);
-        img_4 = findViewById(R.id.img_quiz_question_4);
-        img_5 = findViewById(R.id.img_quiz_question_5);
-        img_6 = findViewById(R.id.img_quiz_question_6);
-        img_7 = findViewById(R.id.img_quiz_question_7);
-        img_8 = findViewById(R.id.img_quiz_question_8);
-        img_9 = findViewById(R.id.img_quiz_question_9);
-        img_10 = findViewById(R.id.img_quiz_question_10);
         //textViews
         tv_current_city = findViewById(R.id.tv_current_city);
         tv_with_festival_london = findViewById(R.id.tv_with_festival_london);
@@ -854,7 +838,7 @@ public class MainActivity extends AppCompatActivity {
         tv_with_festival_ajim = findViewById(R.id.tv_with_festival_ajim);
         tv_with_festival_tamanrasset = findViewById(R.id.tv_with_festival_tamanrasset);
         tv_with_festival_gonna_re_zhu = findViewById(R.id.tv_with_festival_gonna_re_zhu);
-        tv_with_festival_longa_market = findViewById(R.id.tv_with_festival_longa_market);
+        tv_with_festival_mumbai = findViewById(R.id.tv_with_festival_mumbai);
         tv_with_festival_botswana = findViewById(R.id.tv_with_festival_botswana);
         tv_with_festival_antarctica = findViewById(R.id.tv_with_festival_antarctica);
         tv_london = findViewById(R.id.tv_london);
@@ -863,7 +847,7 @@ public class MainActivity extends AppCompatActivity {
         tv_ajim = findViewById(R.id.tv_ajim);
         tv_tamanrasset = findViewById(R.id.tv_tamanrasset);
         tv_gonna_re_zhu = findViewById(R.id.tv_gonna_re_zhu);
-        tv_longa_market = findViewById(R.id.tv_longa_market);
+        tv_mumbai = findViewById(R.id.tv_mumbai);
         tv_botswana = findViewById(R.id.tv_botswana);
         tv_antarctica = findViewById(R.id.tv_antarctica);
         tv_quiz = findViewById(R.id.tv_quiz);
@@ -874,7 +858,7 @@ public class MainActivity extends AppCompatActivity {
         tv_ajim_progress = findViewById(R.id.tv_ajim_progress);
         tv_tamanrasset_progress = findViewById(R.id.tv_tamanrasset_progress);
         tv_gonna_re_zhu_progress = findViewById(R.id.tv_gonna_re_zhu_progress);
-        tv_longa_market_progress = findViewById(R.id.tv_longa_market_progress);
+        tv_mumbai_progress = findViewById(R.id.tv_mumbai_progress);
         tv_botswana_progress = findViewById(R.id.tv_botswana_progress);
         tv_antarctica_progress = findViewById(R.id.tv_antarctica_progress);
         tv_quiz_question_1 = findViewById(R.id.tv_quiz_question_1);
@@ -919,7 +903,7 @@ public class MainActivity extends AppCompatActivity {
         ll_ajim_progress = findViewById(R.id.ll_ajim_progress);
         ll_tamanrasset_progress = findViewById(R.id.ll_tamanrasset_progress);
         ll_gonna_re_zhu_progress = findViewById(R.id.ll_gonna_re_zhu_progress);
-        ll_longa_market_progress = findViewById(R.id.ll_longa_market_progress);
+        ll_mumbai_progress = findViewById(R.id.ll_mumbai_progress);
         ll_botswana_progress = findViewById(R.id.ll_botswana_progress);
         ll_antarctica_progress = findViewById(R.id.ll_antarctica_progress);
         ll_first_question = findViewById(R.id.ll_first_question);
@@ -1077,20 +1061,18 @@ public class MainActivity extends AppCompatActivity {
             currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
-        } else if (currentLevel > 70 && currentCity.equals(getString(R.string.txt_botswana))) {
+        } else if (currentLevel > 70 && currentCity.equals(getString(R.string.txt_mumbai))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = menu_learn;
             previousLayout = "";
             onResume();
-        }
-//        else if (currentLevel > 80 && currentCity.equals(getString(R.string.txt_albufera))) {
-//            currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-//            currentMenuItem = 0;
-//            onResume();
-//        }
-        else if (currentLevel > 80 && currentCity.equals(getString(R.string.txt_antarctica))) {
+        } else if (currentLevel > 80 && currentCity.equals(getString(R.string.txt_botswana))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
             currentMenuItem = menu_learn;
+            onResume();
+        } else if (currentLevel > 90 && currentCity.equals(getString(R.string.txt_antarctica))) {
+            currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
+            currentMenuItem = 0;
             onResume();
         }
         Log.d(TAG, "checkCurrentLevel: currentCity: " + currentCity);
@@ -1108,11 +1090,11 @@ public class MainActivity extends AppCompatActivity {
         else if (currentLevel > 50 && currentLevel <= 60)
             return "Gonna Re Zhu";
         else if (currentLevel > 60 && currentLevel <= 70)
-            return "Botswana";
+            return "Mumbai";
         else if (currentLevel > 70 && currentLevel <= 80)
-            return "Antarctica";
+            return "Botswana";
         else if (currentLevel > 80 && currentLevel <= 90)
-            return "Longa Market";
+            return "Antarctica";
         else
             return "London";
     }
