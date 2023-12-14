@@ -622,7 +622,7 @@ public class MumbaiGameUtils implements GameProcessInterface {
             img_lock_tamanrasset.setImageResource(R.drawable.img_unlock);
             img_lock_tamanrasset.setVisibility(View.VISIBLE);
 
-            ll_gonna_re_zhu_progress.setEnabled(true);
+            ll_gonna_re_zhu_progress.setEnabled(false);
             ll_gonna_re_zhu_progress.setBackground(completeLayout);
             img_lock_gonna_re_zhu.setImageResource(R.drawable.img_unlock);
             img_lock_gonna_re_zhu.setVisibility(View.VISIBLE);
@@ -810,6 +810,7 @@ public class MumbaiGameUtils implements GameProcessInterface {
 
     private void animToShowViews(View whatShow) {
         whatShow.setVisibility(View.VISIBLE);
+        whatShow.setClickable(false);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenHeight = displayMetrics.heightPixels;
@@ -820,5 +821,6 @@ public class MumbaiGameUtils implements GameProcessInterface {
         animationSet.addAnimation(alphaAnimation);
         animationSet.setDuration(1000);
         whatShow.startAnimation(animationSet);
+        whatShow.setClickable(true);
     }
 }

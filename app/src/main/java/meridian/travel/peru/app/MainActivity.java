@@ -4,11 +4,13 @@ import static android.content.ContentValues.TAG;
 import static meridian.travel.peru.app.utils.Constants.KEY_PREF_CURRENT_STOP_NUMBER;
 import static meridian.travel.peru.app.utils.Constants.KEY_PRIVACY_AGREE;
 import static meridian.travel.peru.app.utils.Constants.NAME_PREF;
+import static meridian.travel.peru.app.utils.Constants.TEST_SEND_LINK;
 import static meridian.travel.peru.app.utils.Constants.URL_FOR_REQUEST;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -778,7 +780,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onResume: currentCity: " + currentCity);
         Log.d(TAG, "onResume: currentLevel: " + currentLevel);
         Log.d(TAG, "onResume: firstStart: " + firstStart);
-        if (currentLevel > 80) {
+        if (currentLevel > 90) {
             currentLevel = 1;
             addCountProgress(currentLevel);
             onResume();
@@ -813,6 +815,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initAllComponents() {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         prefs = getSharedPreferences(NAME_PREF, Context.MODE_PRIVATE);
         editor = prefs.edit();
         mainGameUtils = new MainGameUtils(this);
@@ -920,12 +923,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkPolicy() {
         boolean isAgree = prefs.getBoolean(KEY_PRIVACY_AGREE, false);
+        bottomNavigationView.setActivated(false);
         if (isAgree) {
             bottomNavigationView.setActivated(true);
             cl_main_page.setVisibility(View.VISIBLE);
             return;
         }
-        bottomNavigationView.setActivated(false);
         cl_main_page.setVisibility(View.GONE);
         if (!mainGameUtils.isADBEnabled()) {
             Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
@@ -942,8 +945,11 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             Intent goPrivacyOnline = new Intent(MainActivity.this, OnlinePolicyActivity.class);
+            //todo: delete after test!!!
+            goPrivacyOnline.putExtra(TEST_SEND_LINK, URL_FOR_REQUEST + "?" + "afni4f= " + 0);
+
             startActivity(goPrivacyOnline);
-        }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, URL_FOR_REQUEST + "?" + "afni4f= " + 0 + "&dnaiwu=" + batteryPower);
+        }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, URL_FOR_REQUEST + "?" + "afni4f= " + 0);
     }
 
 
@@ -1033,45 +1039,47 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "checkCurrentLevel: currentLevel: " + currentLevel);
         if (currentLevel > 10 && currentCity.equals(getString(R.string.txt_london))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
-            previousLayout = "";
+            previousLayout = "cl_main_page";
+            currentMenuItem = 0;
             onResume();
         } else if (currentLevel > 20 && currentCity.equals(getString(R.string.txt_villajoyosa))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
-            previousLayout = "";
+            previousLayout = "cl_main_page";
+            currentMenuItem = 0;
             onResume();
         } else if (currentLevel > 30 && currentCity.equals(getString(R.string.txt_albufera))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
-            previousLayout = "";
+            previousLayout = "cl_main_page";
+            currentMenuItem = 0;
             onResume();
         } else if (currentLevel > 40 && currentCity.equals(getString(R.string.txt_ajim))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
-            previousLayout = "";
+            previousLayout = "cl_main_page";
+            currentMenuItem = 0;
             onResume();
         } else if (currentLevel > 50 && currentCity.equals(getString(R.string.txt_tamanrasset))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
-            previousLayout = "";
+            previousLayout = "cl_main_page";
+            currentMenuItem = 0;
             onResume();
         } else if (currentLevel > 60 && currentCity.equals(getString(R.string.txt_gonna_re_zhu))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
-            previousLayout = "";
+            currentMenuItem = 0;
+            previousLayout = "cl_main_page";
             onResume();
         } else if (currentLevel > 70 && currentCity.equals(getString(R.string.txt_mumbai))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
-            previousLayout = "";
+            previousLayout = "cl_main_page";
+            currentMenuItem = 0;
             onResume();
         } else if (currentLevel > 80 && currentCity.equals(getString(R.string.txt_botswana))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
-            currentMenuItem = menu_learn;
+            previousLayout = "cl_main_page";
+            currentMenuItem = 0;
             onResume();
         } else if (currentLevel > 90 && currentCity.equals(getString(R.string.txt_antarctica))) {
             currentCity = mainGameUtils.initGameProcessInterface(this, currentLevel);
+            previousLayout = "cl_main_page";
             currentMenuItem = 0;
             onResume();
         }

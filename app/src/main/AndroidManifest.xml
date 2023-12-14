@@ -23,14 +23,6 @@
             android:exported="false"
             android:screenOrientation="fullSensor" />
         <activity
-            android:name=".activities.allMap.AllMapActivity"
-            android:exported="false"
-            android:screenOrientation="fullSensor" />
-        <activity
-            android:name=".activities.ProfileActivity"
-            android:exported="false"
-            android:screenOrientation="fullSensor" />
-        <activity
             android:name=".activities.SplashScreenActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">

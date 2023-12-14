@@ -510,10 +510,83 @@ public class LondonGameUtils implements GameProcessInterface {
 
     @Override
     public void showQuizListProgress(View cl_with_progress, int currentLevel) {
+        activity.findViewById(R.id.villajoyosa_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.albufera_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.ajim_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.tamanrasset_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.gonna_re_zhu_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.mumbai_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.botswana_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.antarctica_progress_bar).setVisibility(View.GONE);
         CircularProgressBar london_progress_bar = activity.findViewById(R.id.london_progress_bar);
+        activity.findViewById(R.id.london_progress_bar).setVisibility(View.VISIBLE);
+        Drawable lockLayout = activity.getDrawable(R.drawable.anim_click_text);
+        Drawable currentLayout = activity.getDrawable(R.drawable.anim_click_for_progress_city);
+        ImageView img_lock_london = activity.findViewById(R.id.img_lock_london);
+        ImageView img_lock_villajoyosa = activity.findViewById(R.id.img_lock_villajoyosa);
+        ImageView img_lock_albufera = activity.findViewById(R.id.img_lock_albufera);
+        ImageView img_lock_ajim = activity.findViewById(R.id.img_lock_ajim);
+        ImageView img_lock_tamanrasset = activity.findViewById(R.id.img_lock_tamanrasset);
+        ImageView img_lock_gonna_re_zhu = activity.findViewById(R.id.img_lock_gonna_re_zhu);
+        ImageView img_lock_mumbai = activity.findViewById(R.id.img_lock_mumbai);
+        ImageView img_lock_botswana = activity.findViewById(R.id.img_lock_botswana);
+        ImageView img_lock_antarctica = activity.findViewById(R.id.img_lock_antarctica);
+        LinearLayout ll_london_progress = activity.findViewById(R.id.ll_london_progress);
+        LinearLayout ll_villajoyosa_progress = activity.findViewById(R.id.ll_villajoyosa_progress);
+        LinearLayout ll_albufera_progress = activity.findViewById(R.id.ll_albufera_progress);
+        LinearLayout ll_ajim_progress = activity.findViewById(R.id.ll_ajim_progress);
+        LinearLayout ll_tamanrasset_progress = activity.findViewById(R.id.ll_tamanrasset_progress);
+        LinearLayout ll_gonna_re_zhu_progress = activity.findViewById(R.id.ll_gonna_re_zhu_progress);
+        LinearLayout ll_botswana_progress = activity.findViewById(R.id.ll_botswana_progress);
+        LinearLayout ll_mumbai_progress = activity.findViewById(R.id.ll_mumbai_progress);
+        LinearLayout ll_antarctica_progress = activity.findViewById(R.id.ll_antarctica_progress);
+
         if (currentLevel > 0 && currentLevel <= 10) {
             london_progress_bar.setProgressText(10);
             london_progress_bar.setProgress(currentLevel);
+            ll_london_progress.setBackground(currentLayout);
+            img_lock_london.setVisibility(View.GONE);
+
+            ll_villajoyosa_progress.setEnabled(false);
+            ll_villajoyosa_progress.setBackground(lockLayout);
+            img_lock_villajoyosa.setImageResource(R.drawable.img_lock);
+            img_lock_villajoyosa.setVisibility(View.VISIBLE);
+
+            ll_albufera_progress.setEnabled(false);
+            ll_albufera_progress.setBackground(lockLayout);
+            img_lock_albufera.setImageResource(R.drawable.img_lock);
+            img_lock_albufera.setVisibility(View.VISIBLE);
+
+            ll_ajim_progress.setEnabled(false);
+            ll_ajim_progress.setBackground(lockLayout);
+            img_lock_ajim.setImageResource(R.drawable.img_lock);
+            img_lock_ajim.setVisibility(View.VISIBLE);
+
+            ll_tamanrasset_progress.setEnabled(false);
+            ll_tamanrasset_progress.setBackground(lockLayout);
+            img_lock_tamanrasset.setImageResource(R.drawable.img_lock);
+            img_lock_tamanrasset.setVisibility(View.VISIBLE);
+
+            ll_gonna_re_zhu_progress.setEnabled(false);
+            ll_gonna_re_zhu_progress.setBackground(lockLayout);
+            img_lock_gonna_re_zhu.setImageResource(R.drawable.img_lock);
+            img_lock_gonna_re_zhu.setVisibility(View.VISIBLE);
+
+            ll_mumbai_progress.setEnabled(false);
+            ll_mumbai_progress.setBackground(lockLayout);
+            img_lock_mumbai.setImageResource(R.drawable.img_lock);
+            img_lock_mumbai.setVisibility(View.VISIBLE);
+
+            ll_botswana_progress.setEnabled(false);
+            ll_botswana_progress.setBackground(lockLayout);
+            img_lock_botswana.setImageResource(R.drawable.img_lock);
+            img_lock_botswana.setVisibility(View.VISIBLE);
+
+            ll_antarctica_progress.setEnabled(true);
+            ll_antarctica_progress.setBackground(lockLayout);
+            img_lock_antarctica.setVisibility(View.VISIBLE);
+            img_lock_antarctica.setImageResource(R.drawable.img_lock);
+
             activity.findViewById(R.id.ll_london_progress).setEnabled(true);
             activity.findViewById(R.id.ll_villajoyosa_progress).setEnabled(false);
             activity.findViewById(R.id.ll_albufera_progress).setEnabled(false);
@@ -652,6 +725,7 @@ public class LondonGameUtils implements GameProcessInterface {
 
     private void animToShowViews(View whatShow) {
         whatShow.setVisibility(View.VISIBLE);
+        whatShow.setClickable(false);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenHeight = displayMetrics.heightPixels;
@@ -662,5 +736,6 @@ public class LondonGameUtils implements GameProcessInterface {
         animationSet.addAnimation(alphaAnimation);
         animationSet.setDuration(1000);
         whatShow.startAnimation(animationSet);
+        whatShow.setClickable(true);
     }
 }

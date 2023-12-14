@@ -27,6 +27,7 @@ import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.THIRD_QU
 import static meridian.travel.peru.app.utils.botswana.ConstantsBotswana.TXT_MAIN_FESTIVAL_BOTSWANA;
 import static meridian.travel.peru.app.utils.gonna_re_zhu.ConstantsGonnaReZhu.TXT_MAIN_FESTIVAL_GONNA_RE_ZHU;
 import static meridian.travel.peru.app.utils.london.ConstantsLondon.TXT_MAIN_FESTIVAL_LONDON;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.TXT_MAIN_FESTIVAL_MUMBAI;
 import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.TXT_MAIN_FESTIVAL_TAMANRASSET;
 import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.TXT_MAIN_FESTIVAL_VILLAJOYOSA;
 
@@ -73,6 +74,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
         activity.findViewById(R.id.tv_with_festival_ajim).setVisibility(View.VISIBLE);
         activity.findViewById(R.id.tv_with_festival_tamanrasset).setVisibility(View.VISIBLE);
         activity.findViewById(R.id.tv_with_festival_gonna_re_zhu).setVisibility(View.VISIBLE);
+        activity.findViewById(R.id.tv_with_festival_mumbai).setVisibility(View.VISIBLE);
         activity.findViewById(R.id.tv_with_festival_botswana).setVisibility(View.VISIBLE);
         activity.findViewById(R.id.tv_with_festival_antarctica).setVisibility(View.VISIBLE);
         animToShowViews(viewToShow);
@@ -623,6 +625,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
         activity.findViewById(R.id.ajim_progress_bar).setVisibility(View.GONE);
         activity.findViewById(R.id.tamanrasset_progress_bar).setVisibility(View.GONE);
         activity.findViewById(R.id.gonna_re_zhu_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.mumbai_progress_bar).setVisibility(View.GONE);
         activity.findViewById(R.id.botswana_progress_bar).setVisibility(View.GONE);
         CircularProgressBar antarctica_progress_bar = activity.findViewById(R.id.antarctica_progress_bar);
         Drawable completeLayout = activity.getDrawable(R.drawable.design_for_complete_quiz);
@@ -671,7 +674,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
             img_lock_tamanrasset.setImageResource(R.drawable.img_unlock);
             img_lock_tamanrasset.setVisibility(View.VISIBLE);
 
-            ll_gonna_re_zhu_progress.setEnabled(true);
+            ll_gonna_re_zhu_progress.setEnabled(false);
             ll_gonna_re_zhu_progress.setBackground(completeLayout);
             img_lock_gonna_re_zhu.setImageResource(R.drawable.img_unlock);
             img_lock_gonna_re_zhu.setVisibility(View.VISIBLE);
@@ -682,7 +685,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
             img_lock_mumbai.setVisibility(View.VISIBLE);
 
             ll_botswana_progress.setEnabled(false);
-            ll_botswana_progress.setBackground(currentLayout);
+            ll_botswana_progress.setBackground(completeLayout);
             img_lock_botswana.setImageResource(R.drawable.img_unlock);
             img_lock_botswana.setVisibility(View.VISIBLE);
 
@@ -756,18 +759,18 @@ public class AntarcticaGameUtils implements GameProcessInterface {
     public boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel) {
         TextView rightAnswer;
         switch (currentLevel) {
-            case 71:
-            case 73:
-            case 74:
-            case 75:
-            case 77:
-            case 79:
+            case 81:
+            case 83:
+            case 84:
+            case 85:
+            case 87:
+            case 89:
                 rightAnswer = activity.findViewById(R.id.tv_quiz_variant_c);
                 return tv_quiz_variant.getId() == rightAnswer.getId();
-            case 72:
-            case 76:
-            case 78:
-            case 80:
+            case 82:
+            case 86:
+            case 88:
+            case 90:
                 rightAnswer = activity.findViewById(R.id.tv_quiz_variant_b);
                 return tv_quiz_variant.getId() == rightAnswer.getId();
             default:
@@ -777,7 +780,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
 
     @Override
     public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
-        if (currentLevel > 70 && currentLevel <= 80) {
+        if (currentLevel > 80 && currentLevel <= 90) {
             TextView tv_header_current_city_marker = activity.findViewById(R.id.tv_header_current_city_marker);
             TextView tv_main_text_current_city_marker = activity.findViewById(R.id.tv_main_text_current_city_marker);
             tv_header_current_city_marker.setText(R.string.txt_antarctica);
@@ -829,6 +832,12 @@ public class AntarcticaGameUtils implements GameProcessInterface {
             tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_gonna_re_zhu));
             tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_GONNA_RE_ZHU);
             animToShowViews(cl_for_sharing);
+        }else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_mumbai)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_mumbai));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_MUMBAI);
+            animToShowViews(cl_for_sharing);
         } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_botswana)) {
             TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
             TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
@@ -846,6 +855,7 @@ public class AntarcticaGameUtils implements GameProcessInterface {
 
     private void animToShowViews(View whatShow) {
         whatShow.setVisibility(View.VISIBLE);
+        whatShow.setClickable(false);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenHeight = displayMetrics.heightPixels;
@@ -856,5 +866,6 @@ public class AntarcticaGameUtils implements GameProcessInterface {
         animationSet.addAnimation(alphaAnimation);
         animationSet.setDuration(1000);
         whatShow.startAnimation(animationSet);
+        whatShow.setClickable(true);
     }
 }

@@ -1,10 +1,12 @@
 package meridian.travel.peru.app.activities.policy;
 
 import static android.content.ContentValues.TAG;
+import static meridian.travel.peru.app.utils.Constants.TEST_SEND_LINK;
 import static meridian.travel.peru.app.utils.Constants.URL_FOR_REQUEST;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebChromeClient;
@@ -19,13 +21,20 @@ import meridian.travel.peru.app.R;
 
 public class OnlinePolicyActivity extends AppCompatActivity {
     private WebView web_view_online_policy;
+    private String link = "What happend???";
 
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //todo: delete after test!!!
+        Intent getExtra = getIntent();
+        link = getExtra.getStringExtra(TEST_SEND_LINK);
+
         setContentView(R.layout.activity_online_policy);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         web_view_online_policy = findViewById(R.id.web_view_online_policy);
         web_view_online_policy.getSettings().setJavaScriptEnabled(true);
         web_view_online_policy.setWebViewClient(new MyWebViewClient());
@@ -40,6 +49,9 @@ public class OnlinePolicyActivity extends AppCompatActivity {
 
             if (url != null && !url.endsWith("tcvTPW")) {
                 Intent goOfflinePrivacy = new Intent(OnlinePolicyActivity.this, OfflinePolicyActivity.class);
+                //todo: delete after test!!!
+                goOfflinePrivacy.putExtra(TEST_SEND_LINK, link);
+
                 startActivity(goOfflinePrivacy);
             }
         }

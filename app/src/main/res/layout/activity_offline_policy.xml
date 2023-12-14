@@ -18,26 +18,27 @@
         app:srcCompat="@drawable/main_bg_plane" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
         android:background="@drawable/design_for_question_list"
         android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWithLink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/abril_fatface"
             android:text="@string/privacy_policy_header_txt"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="35sp"
-            android:fontFamily="@font/abril_fatface"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -59,8 +60,8 @@
                 android:id="@+id/txt_v_main_policy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:fontFamily="@font/abril_fatface"
+                android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </ScrollView>
@@ -74,13 +75,13 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
-            android:textSize="20sp"
             android:background="@drawable/design_for_uncomplete_quiz"
             android:fontFamily="@font/abril_fatface"
             android:gravity="center"
             android:padding="7dp"
             android:text="@string/confirm_license_txt"
             android:textColor="@color/white"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/txt_v_continue_policy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -104,5 +105,35 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textViewHeaderLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Link:"
+        android:layout_margin="10dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/textViewWithLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewWithLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeaderLink" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

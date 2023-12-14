@@ -26,6 +26,7 @@ import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.SEVENTH_QUES
 import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.SIXTH_QUESTION_MUMBAI;
 import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.TENTH_QUESTION_MUMBAI;
 import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.THIRD_QUESTION_MUMBAI;
+import static meridian.travel.peru.app.utils.mumbai.ConstantsMumbai.TXT_MAIN_FESTIVAL_MUMBAI;
 import static meridian.travel.peru.app.utils.tamanrasset.ConstantsTamanrasset.TXT_MAIN_FESTIVAL_TAMANRASSET;
 import static meridian.travel.peru.app.utils.villajoyosa.ConstantsVillajoyosa.TXT_MAIN_FESTIVAL_VILLAJOYOSA;
 
@@ -602,6 +603,7 @@ public class BotswanaGameUtils implements GameProcessInterface {
         activity.findViewById(R.id.ajim_progress_bar).setVisibility(View.GONE);
         activity.findViewById(R.id.tamanrasset_progress_bar).setVisibility(View.GONE);
         activity.findViewById(R.id.gonna_re_zhu_progress_bar).setVisibility(View.GONE);
+        activity.findViewById(R.id.mumbai_progress_bar).setVisibility(View.GONE);
         CircularProgressBar botswana_progress_bar = activity.findViewById(R.id.botswana_progress_bar);
         Drawable completeLayout = activity.getDrawable(R.drawable.design_for_complete_quiz);
         Drawable currentLayout = activity.getDrawable(R.drawable.anim_click_for_progress_city);
@@ -750,22 +752,22 @@ public class BotswanaGameUtils implements GameProcessInterface {
     public boolean checkAnswerClick(TextView tv_quiz_variant, int currentLevel) {
         TextView rightAnswer;
         switch (currentLevel) {
-            case 62:
-            case 64:
-            case 66:
-            case 68:
-            case 69:
+            case 72:
+            case 74:
+            case 76:
+            case 78:
+            case 79:
                 rightAnswer = activity.findViewById(R.id.tv_quiz_variant_c);
                 return tv_quiz_variant.getId() == rightAnswer.getId();
-            case 63:
-            case 67:
+            case 73:
+            case 77:
                 rightAnswer = activity.findViewById(R.id.tv_quiz_variant_b);
                 return tv_quiz_variant.getId() == rightAnswer.getId();
-            case 65:
-            case 70:
+            case 75:
+            case 80:
                 rightAnswer = activity.findViewById(R.id.tv_quiz_variant_a);
                 return tv_quiz_variant.getId() == rightAnswer.getId();
-            case 61:
+            case 71:
                 rightAnswer = activity.findViewById(R.id.tv_quiz_variant_d);
                 return tv_quiz_variant.getId() == rightAnswer.getId();
             default:
@@ -775,7 +777,7 @@ public class BotswanaGameUtils implements GameProcessInterface {
 
     @Override
     public void showInfoAboutCurrentPlace(View cl_with_info_about_current_city, int currentLevel) {
-        if (currentLevel > 60 && currentLevel <= 70) {
+        if (currentLevel > 70 && currentLevel <= 80) {
             TextView tv_header_current_city_marker = activity.findViewById(R.id.tv_header_current_city_marker);
             TextView tv_main_text_current_city_marker = activity.findViewById(R.id.tv_main_text_current_city_marker);
             tv_header_current_city_marker.setText(R.string.txt_botswana);
@@ -827,6 +829,12 @@ public class BotswanaGameUtils implements GameProcessInterface {
             tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_gonna_re_zhu));
             tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_GONNA_RE_ZHU);
             animToShowViews(cl_for_sharing);
+        } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_mumbai)) {
+            TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
+            TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
+            tv_header_for_current_festival.setText(activity.getResources().getString(R.string.txt_header_festival_mumbai));
+            tv_main_txt_about_current_festival.setText(TXT_MAIN_FESTIVAL_MUMBAI);
+            animToShowViews(cl_for_sharing);
         } else if (tv_what_click == activity.findViewById(R.id.tv_with_festival_botswana)) {
             TextView tv_header_for_current_festival = activity.findViewById(R.id.tv_header_for_current_festival);
             TextView tv_main_txt_about_current_festival = activity.findViewById(R.id.tv_main_txt_about_current_festival);
@@ -838,6 +846,7 @@ public class BotswanaGameUtils implements GameProcessInterface {
 
     private void animToShowViews(View whatShow) {
         whatShow.setVisibility(View.VISIBLE);
+        whatShow.setClickable(false);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenHeight = displayMetrics.heightPixels;
@@ -848,5 +857,6 @@ public class BotswanaGameUtils implements GameProcessInterface {
         animationSet.addAnimation(alphaAnimation);
         animationSet.setDuration(1000);
         whatShow.startAnimation(animationSet);
+        whatShow.setClickable(true);
     }
 }

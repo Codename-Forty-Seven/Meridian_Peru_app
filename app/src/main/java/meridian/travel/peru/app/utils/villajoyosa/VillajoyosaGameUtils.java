@@ -682,6 +682,7 @@ public class VillajoyosaGameUtils implements GameProcessInterface {
 
     private void animToShowViews(View whatShow) {
         whatShow.setVisibility(View.VISIBLE);
+        whatShow.setClickable(false);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int screenHeight = displayMetrics.heightPixels;
@@ -692,5 +693,6 @@ public class VillajoyosaGameUtils implements GameProcessInterface {
         animationSet.addAnimation(alphaAnimation);
         animationSet.setDuration(1000);
         whatShow.startAnimation(animationSet);
+        whatShow.setClickable(true);
     }
 }
