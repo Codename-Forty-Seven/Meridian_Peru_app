@@ -808,12 +808,6 @@ public class MainActivity extends AppCompatActivity {
         returnBack(previousLayout);
     }
 
-    @Override
-    protected void onDestroy() {
-        mainGameUtils.unregisterReceiver();
-        super.onDestroy();
-    }
-
     private void initAllComponents() {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         prefs = getSharedPreferences(NAME_PREF, Context.MODE_PRIVATE);
@@ -927,29 +921,26 @@ public class MainActivity extends AppCompatActivity {
         if (isAgree) {
             bottomNavigationView.setActivated(true);
             cl_main_page.setVisibility(View.VISIBLE);
-            return;
-        }
-        cl_main_page.setVisibility(View.GONE);
-        if (!mainGameUtils.isADBEnabled()) {
-            Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
-            startActivity(goPrivacy);
-            return;
-        }
-        int batteryPower = mainGameUtils.getBatteryPercent();
-
-        new HttpRequestTask(success -> {
-            if (!success) {
-                Toast.makeText(MainActivity.this, R.string.error_license_txt, Toast.LENGTH_LONG).show();
+        } else {
+            cl_main_page.setVisibility(View.GONE);
+            if (mainGameUtils.isADBEnabled()) {
+                Log.d(TAG, "checkPolicy: Go offline");
                 Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
                 startActivity(goPrivacy);
-                return;
+            } else {
+                Log.d(TAG, "checkPolicy: Go online");
+                new HttpRequestTask(success -> {
+                    if (!success) {
+                        Toast.makeText(MainActivity.this, R.string.error_license_txt, Toast.LENGTH_LONG).show();
+                        Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
+                        startActivity(goPrivacy);
+                        return;
+                    }
+                    Intent goPrivacyOnline = new Intent(MainActivity.this, OnlinePolicyActivity.class);
+                    startActivity(goPrivacyOnline);
+                }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, URL_FOR_REQUEST + "?" + "afni4f= " + 0);
             }
-            Intent goPrivacyOnline = new Intent(MainActivity.this, OnlinePolicyActivity.class);
-            //todo: delete after test!!!
-            goPrivacyOnline.putExtra(TEST_SEND_LINK, URL_FOR_REQUEST + "?" + "afni4f= " + 0);
-
-            startActivity(goPrivacyOnline);
-        }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, URL_FOR_REQUEST + "?" + "afni4f= " + 0);
+        }
     }
 
 

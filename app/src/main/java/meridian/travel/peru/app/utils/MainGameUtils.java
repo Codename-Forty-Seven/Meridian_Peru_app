@@ -5,15 +5,9 @@ import static android.content.ContentValues.TAG;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.net.Uri;
-import android.os.BatteryManager;
-import android.os.Build;
 import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
@@ -36,14 +30,12 @@ public class MainGameUtils {
     private GameProcessInterface gameProcessInterface;
     private ObjectAnimator animator;
     private Runnable runnable;
-    private int currentIndex = 0, batteryPercent;
+    private int currentIndex = 0;
     private final Handler handler = new Handler();
     private Activity activity;
 
     public MainGameUtils(Activity activity) {
         this.activity = activity;
-        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        activity.registerReceiver(batteryReceiver, filter);
     }
 
     public String initGameProcessInterface(Activity activity, int currentLevel) {
@@ -262,30 +254,12 @@ public class MainGameUtils {
         }
     }
 
-    private final BroadcastReceiver batteryReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-            batteryPercent = Math.round((level / (float) scale) * 100);
-
-            Log.d(TAG, "onReceive: Battery Level: " + batteryPercent + " %");
-        }
-    };
-
     public boolean isADBEnabled() {
         int adb = Settings.Secure.getInt(
                 activity.getContentResolver(),
                 Settings.Global.ADB_ENABLED, 0
         );
+        Log.d(TAG, "isADBEnabled: adb: " + adb);
         return adb == 1;
-    }
-
-    public void unregisterReceiver() {
-        activity.unregisterReceiver(batteryReceiver);
-    }
-
-    public int getBatteryPercent() {
-        return batteryPercent;
     }
 }

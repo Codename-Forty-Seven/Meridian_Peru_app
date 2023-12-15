@@ -22,7 +22,6 @@ import meridian.travel.peru.app.R;
 
 public class OfflinePolicyActivity extends AppCompatActivity {
     private TextView txt_v_main_policy, txt_v_continue_policy;
-    private TextView textViewHeaderLink, textViewWithLink;
     private Switch sw_agree_policy;
     private SharedPreferences.Editor editor;
 
@@ -60,12 +59,6 @@ public class OfflinePolicyActivity extends AppCompatActivity {
         txt_v_continue_policy = findViewById(R.id.txt_v_continue_policy);
         txt_v_main_policy = findViewById(R.id.txt_v_main_policy);
         txt_v_main_policy.setText(PRIVACY_POLICY_MAIN_TXT);
-
-
-        textViewWithLink=findViewById(R.id.textViewWithLink);
-        textViewHeaderLink=findViewById(R.id.textViewHeaderLink);
-        Intent getLink = getIntent();
-        textViewWithLink.setText(getLink.getStringExtra(TEST_SEND_LINK));
     }
 
     private void addPolicy() {
