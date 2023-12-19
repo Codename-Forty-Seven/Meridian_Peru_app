@@ -4,8 +4,6 @@ import static android.content.ContentValues.TAG;
 import static meridian.travel.peru.app.utils.Constants.KEY_PREF_CURRENT_STOP_NUMBER;
 import static meridian.travel.peru.app.utils.Constants.KEY_PRIVACY_AGREE;
 import static meridian.travel.peru.app.utils.Constants.NAME_PREF;
-import static meridian.travel.peru.app.utils.Constants.TEST_SEND_LINK;
-import static meridian.travel.peru.app.utils.Constants.URL_FOR_REQUEST;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,7 +31,6 @@ import java.net.URL;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import meridian.travel.peru.app.activities.policy.OfflinePolicyActivity;
-import meridian.travel.peru.app.activities.policy.OnlinePolicyActivity;
 import meridian.travel.peru.app.utils.MainGameUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -918,29 +915,13 @@ public class MainActivity extends AppCompatActivity {
     private void checkPolicy() {
         boolean isAgree = prefs.getBoolean(KEY_PRIVACY_AGREE, false);
         bottomNavigationView.setActivated(false);
-        if (isAgree) {
-            bottomNavigationView.setActivated(true);
-            cl_main_page.setVisibility(View.VISIBLE);
-        } else {
-            cl_main_page.setVisibility(View.GONE);
-            if (mainGameUtils.isADBEnabled()) {
-                Log.d(TAG, "checkPolicy: Go offline");
-                Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
-                startActivity(goPrivacy);
-            } else {
-                Log.d(TAG, "checkPolicy: Go online");
-                new HttpRequestTask(success -> {
-                    if (!success) {
-                        Toast.makeText(MainActivity.this, R.string.error_license_txt, Toast.LENGTH_LONG).show();
-                        Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
-                        startActivity(goPrivacy);
-                        return;
-                    }
-                    Intent goPrivacyOnline = new Intent(MainActivity.this, OnlinePolicyActivity.class);
-                    startActivity(goPrivacyOnline);
-                }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, URL_FOR_REQUEST + "?" + "afni4f= " + 0);
-            }
+        if (!isAgree) {
+            Intent goPrivacy = new Intent(MainActivity.this, OfflinePolicyActivity.class);
+            startActivity(goPrivacy);
+            return;
         }
+        bottomNavigationView.setActivated(true);
+        cl_main_page.setVisibility(View.VISIBLE);
     }
 
 
