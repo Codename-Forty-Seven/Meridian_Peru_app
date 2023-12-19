@@ -1083,42 +1083,4 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt(KEY_PREF_CURRENT_STOP_NUMBER, currentLevel);
         editor.apply();
     }
-
-    private static class HttpRequestTask extends AsyncTask<String, Void, Boolean> {
-        private OnRequestCompleteListener listener;
-
-        public interface OnRequestCompleteListener {
-            void onRequestComplete(boolean success);
-        }
-
-        public HttpRequestTask(OnRequestCompleteListener listener) {
-            this.listener = listener;
-        }
-
-        @Override
-        protected Boolean doInBackground(String... params) {
-            HttpURLConnection urlConnection = null;
-
-            try {
-                URL url = new URL(params[0]);
-                urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-                return urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK;
-            } catch (IOException e) {
-                e.printStackTrace();
-                return false;
-            } finally {
-                if (urlConnection != null) {
-                    urlConnection.disconnect();
-                }
-            }
-        }
-
-        @Override
-        protected void onPostExecute(Boolean result) {
-            if (listener != null) {
-                listener.onRequestComplete(result);
-            }
-        }
-    }
 }

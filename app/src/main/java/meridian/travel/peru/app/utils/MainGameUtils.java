@@ -253,13 +253,4 @@ public class MainGameUtils {
             animator.cancel();
         }
     }
-
-    public boolean isADBEnabled() {
-        int adb = Settings.Secure.getInt(
-                activity.getContentResolver(),
-                Settings.Global.ADB_ENABLED, 0
-        );
-        Log.d(TAG, "isADBEnabled: adb: " + adb);
-        return adb == 1;
-    }
 }
